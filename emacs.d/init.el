@@ -20,14 +20,29 @@
 (eval-after-load 'magit
   (progn '(global-set-key (kbd "C-x g") 'magit-status)))
 
+;;; after macro per @jvalentini
+(defmacro after (mode &rest body)
+  "`eval-after-load' MODE evaluate BODY.
+This allows us to define configuration for features that aren't
+always installed and only eval that configuration after the feature is loaded.
+ELPA packages usually provide an -autoloads feature which we can
+use to determine if the package is installed/loaded."
+  (declare (indent defun))
+  `(eval-after-load (symbol-name ,mode)
+     '(progn ,@body)))
+
 ;;; IDO
-(require 'flx-ido)
-(flx-ido-mode 1)
-(setq flx-ido-threshhold 2000)
-(setq ido-enable-flex-matching t)
-(setq ido-everywhere t)
-(ido-mode 1)
-(setq ido-create-new-buffer 'always)
+(after 'ido-ubiquitous-autoloads
+  (setq ido-enable-flex-matching t
+        ido-auto-merge-work-directories-length -1
+        ido-use-faces nil
+        flx-ido-threshhold 2000
+        ido-everywhere t
+        ido-create-new-buffer 'always)
+  (ido-mode 1)
+  (ido-ubiquitous-mode 1)
+  (require 'flx-ido)
+  (flx-ido-mode 1))
 
 ;;; Projectile
 (require 'ack-and-a-half)
