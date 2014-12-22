@@ -13,7 +13,7 @@
 ;;; Theme
 (load-theme 'solarized-light t)
 (set-cursor-color "firebrick")
-(set-frame-font "Fira Mono OT-14" nil t)
+(set-frame-font "Fira Mono-14" nil t)
 
 ;;; Git
 (require 'magit)
