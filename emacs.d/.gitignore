@@ -1,16 +1,12 @@
+# -*- mode: gitignore; -*-
+*~
 *.elc
 session*
 auto-save-list
 .cask
-eshell
-tramp
 .emacs.desktop*
-abbrev_defs
 secret.json
 projectile.cache
 projectile-bookmarks*
-ac-comphist.dat
-org-clock-save.el
-bookmarks
 elpa/
-url/cookies
+ido.last
