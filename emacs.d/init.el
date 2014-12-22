@@ -162,6 +162,9 @@ use to determine if the package is installed/loaded."
   howdoi-minor-mode howdoi-minor-mode)
 (global-howdoi-minor-mode 1)
 
-
+;; Powerline Fix to move the underline down a couple of pixels
 (setq x-use-underline-position-properties nil)
 (setq underline-minimum-offset 4)
+
+;; JSON
+(require 'json)

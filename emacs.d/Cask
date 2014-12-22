@@ -29,6 +29,7 @@
 (depends-on "highlight")
 (depends-on "howdoi")
 (depends-on "ido-ubiquitous")
+(depends-on "json-mode")
 (depends-on "lua-mode")
 (depends-on "magit")
 (depends-on "markdown-mode")
