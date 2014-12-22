@@ -14,6 +14,8 @@
 (load-theme 'solarized-light t)
 (set-cursor-color "firebrick")
 (set-frame-font "Fira Mono-14" nil t)
+(require 'powerline)
+(powerline-default-theme)
 
 ;; Git
 (require 'magit)
@@ -43,6 +45,22 @@ use to determine if the package is installed/loaded."
   (ido-ubiquitous-mode 1)
   (require 'flx-ido)
   (flx-ido-mode 1))
+
+;; smex
+(require 'smex)
+(smex-initialize)
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+;; Old M-x
+;; (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+(defadvice smex (around space-inserts-hyphen activate compile)
+        (let ((ido-cannot-complete-command
+               `(lambda ()
+                  (interactive)
+                  (if (string= " " (this-command-keys))
+                      (insert ?-)
+                    (funcall ,ido-cannot-complete-command)))))
+          ad-do-it))
 
 ;; Projectile
 (require 'ack-and-a-half)
@@ -138,3 +156,12 @@ use to determine if the package is installed/loaded."
 
 ;; Add rainbow delimiters in all programming modes
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+
+;; howdoi
+(define-globalized-minor-mode global-howdoi-minor-mode
+  howdoi-minor-mode howdoi-minor-mode)
+(global-howdoi-minor-mode 1)
+
+
+(setq x-use-underline-position-properties nil)
+(setq underline-minimum-offset 4)
