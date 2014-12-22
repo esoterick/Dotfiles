@@ -95,5 +95,9 @@ use to determine if the package is installed/loaded."
 (tool-bar-mode -1)
 (setq inhibit-startup-screen t)
 
+;;; GUI Emacs
+(if window-system
+  (x-focus-frame nil))
+
 ;; Show keystrokes
 (setq echo-keystrokes 0.02)
