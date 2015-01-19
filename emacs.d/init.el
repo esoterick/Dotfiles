@@ -11,9 +11,9 @@
   (exec-path-from-shell-initialize))
 
 ;; Theme
-(load-theme 'solarized-light t)
+(load-theme 'solarized-dark t)
 (set-cursor-color "firebrick")
-(set-frame-font "Fira Mono-14" nil t)
+(set-frame-font "Fira Mono-8" nil t)
 (require 'powerline)
 (powerline-default-theme)
 
