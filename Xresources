@@ -7,6 +7,8 @@ urxvt*cursorBlink:	true
 urxvt*font: 		xft:Fira Mono:pixelsize=10:antialias=true
 urxvt*boldFont:		xft:Fira Mono:pixelsize=10:antialias=true
 urxvt*letterSpace:	-2
+urxvt*perl-ext-launcher: default,matcher
+urxvt*matcher.button: 1
 urxvt*urlLauncher:	/usr/bin/firefox
 urxvt*matcher.button:	1
 urxvt*cutchars:		`"()'*<>[]{|}

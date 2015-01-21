@@ -1,6 +1,6 @@
 #!/bin/sh
 
-feh --bg-scale /home/thor/Photos/xmonad.png &
+feh --bg-scale /home/thor/Photos/lambda.png &
 
 /usr/bin/VBoxClient-all
 
@@ -32,5 +32,7 @@ xset +fp /usr/share/fonts
 xset fp rehash
 
 xsetroot -cursor_name left_ptr &
+
+/usr/bin/urxvtd -q -f -o &
 
 exec xmonad

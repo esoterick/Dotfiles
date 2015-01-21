@@ -262,7 +262,7 @@ myManageHook = placeHook (withGaps (20,12,12,12) (smart (0.5,0.5))) <+> insertPo
         ]) <+> manageHook defaultConfig
         where
             myTermApps    = ["urxvtc", "xterm", "xfce4-terminal", "xfontsel"]
-            myWebApps     = ["Navigator", "newsbeuter", "mutt", "luakit", "midori", "Mail", "dwb", "chromium", "firefox"]
+            myWebApps     = ["Navigator", "newsbeuter", "mutt", "luakit", "midori", "Mail", "dwb", "Chromium", "firefox"]
             myMediaApps   = ["easytag", "sonata", "comix", "inkscape", "vlc", "zathura", "gnome-mplayer", "Audacity", "hotot", "ncmpcpp", "weechat", "mplayer", "gimp", "gimp-2.8"]
             mySystApps    = ["ranger", "thunar", "Thunar", "lxappearance", "geany", "nitrogen", "Qt-subapplication", "gparted", "bleachbit"]
 
@@ -325,7 +325,7 @@ myLogHook h  = dynamicLogWithPP $ defaultPP
 
 -- AUTOSTART
 myStartupHook = do
-          spawnOnce "/usr/bin/urxvtd -q -f -o"
+--          spawnOnce "/usr/bin/urxvtd -q -f -o"
           spawnOnce "xsetroot -cursor_name left_ptr &"
           spawnOnce "unclutter &"
 --          spawnOnce "sh ~/.fehbg &"
