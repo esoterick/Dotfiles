@@ -1,0 +1,6 @@
+hi FixedFont -a font-size:12px !important;
+hi FixedFont -a font-family: "Fira Mono" !important;
+hi CmdLine -a font-size:12px !important;
+hi CmdLine -a font-family: "Fira Mono" !important;
+hi StatusLine -a font-size:12px !important;
+hi StatusLine -a font-family: "Fira Mono" !important;
