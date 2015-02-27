@@ -51,10 +51,14 @@ envfile="$HOME/.gnupg/gpg-agent.env"
 if [[ -e "$envfile" ]] && kill -0 $(grep GPG_AGENT_INFO "$envfile" | cut -d: -f 2) 2> /dev/null; then
     eval "$(cat "$envfile")"
 else
-    eval "$(gpg-agent --daemon --enable-ssh-support --write-env-file "$envfile")"
+    eval "$(gpg-agent --daemon --enable-ssh-support --write-env-file "$envfile" 2> /dev/null)" 
 fi
 
 export GPG_AGENT_INFO
 export SSH_AUTH_SOCK
 
 alias ls='ls --color'
+
+function update_mirrors {
+    sudo reflector --verbose -l 200 -p http --sort rate --save /etc/pacman.d/mirrorlist
+}
