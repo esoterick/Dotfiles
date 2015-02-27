@@ -71,7 +71,7 @@ myColorBrown    = "#989584"
 
 -- Settings
 myModMask       = mod4Mask
-myTerminal      = "urxvtc -name urxvt"
+myTerminal      = "urxvtc"
 
 -- Prompts colors
 myPromptConfig =
@@ -194,28 +194,16 @@ myKeys =
         , ("M-M1-<KP_Subtract>",removeEmptyWorkspace)
 
 -- Apps
-        , ("M-<Return>",        spawn "urxvtc -name urxvt")
-        , ("M-S-<Return>",      spawn "urxvtc -name anyWorkspace")
+        , ("M-<Return>",        spawn "urxvtc -title urxvt")
         , ("M-<Space>",         spawn "dmenu_run -nb '#181512' -nf '#989584' -sb '#181512' -sf '#cd546c' -p '>>' -fn '-*-nu-medium-*-*-*-*-*-*-*-*-*-*-*' -i")
         , ("C-<Space>",         spawn "pkill dunst")
         , ("M-g",               spawn "magnet")
-        -- , ("M-x",               safeSpawn "i3lock" ["-ubi", "/home/logan/images/accueil.png"])
-        , ("M-f",               raiseMaybe (runInTerm "-name ranger" "ranger") (resource =? "ranger"))
-        , ("M-t",               raiseMaybe (runInTerm "-name newsbeuter" "newsbeuter") (resource =? "newsbeuter"))
-        , ("M-m",               raiseMaybe (runInTerm "-name mutt" "mutt") (resource =? "mutt"))
-        , ("M-v",               raiseMaybe (runInTerm "-name weechat" "weechat-curses") (resource =? "weechat"))
-        , ("M-o",               raiseMaybe (runInTerm "-name htop" "htop") (resource =? "htop"))
-        , ("M-w",               runOrRaise "iceweasel" (resource =? "Navigator"))
-        , ("M-C-f",             runOrRaise "thunar" (resource =? "thunar"))
-        , ("M-C-<Return>",      runOrRaise "trayerd" (resource =? "trayer"))
-        , ("M-M1-f",            runOrCopy "urxvtc -name ranger -e ranger" (resource =? "ranger"))
-        , ("M-M1-t",            runOrCopy "urxvtc -name newsbeuter -e newsbeuter" (resource =? "newsbeuter"))
-        , ("M-M1-m",            runOrCopy "urxvtc -name mutt -e mutt" (resource =? "mutt"))
-        , ("M-M1-v",            runOrCopy "urxvtc -name weechat -e weechat-curses" (resource =? "weechat"))
-        , ("M-M1-o",            runOrCopy "urxvtc -name htop -e htop" (resource =? "htop"))
-        , ("M-M1-w",            runOrCopy "iceweasel" (resource =? "Navigator"))
-        , ("M-C-A-f",           runOrCopy "thunar" (resource =? "thunar"))
-        , ("M-M1-C-<Return>",   runOrCopy "trayerd" (resource =? "trayer"))
+        , ("M-f",               raiseMaybe (runInTerm "-title ranger" "ranger") (title =? "ranger"))
+        , ("M-v",           	raiseMaybe (runInTerm "-title weechat" "weechat-curses") (title =? "weechat"))
+        , ("M-o",           	raiseMaybe (runInTerm "-title htop" "htop") (title =? "htop"))
+        , ("M-M1-f",            runOrCopy "urxvtc -title ranger -e ranger" (title =? "ranger"))
+        , ("M-M!-v",           	runOrCopy "urxvtc -title weechat -e weechat-curses" (title =? "weechat"))
+        , ("M-M1-o",            runOrCopy "urxvtc -title htop -e htop" (title =? "htop"))
 
 -- Prompts
         , ("M-,",               goToSelected $ myGSConfig myGridConfig)
@@ -225,7 +213,6 @@ myKeys =
 -- Scratchpads
         , ("M-<Tab>",           namedScratchpadAction myScratchpads "terminal")
         , ("M-c",               namedScratchpadAction myScratchpads "wcalc")
-        , ("M-b",               namedScratchpadAction myScratchpads "rtorrent")
         , ("M-n",               namedScratchpadAction myScratchpads "music")
         , ("<XF86Tools>",       namedScratchpadAction myScratchpads "music")
 
