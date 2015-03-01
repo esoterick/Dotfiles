@@ -1,6 +1,6 @@
 #!/bin/sh
 
-feh --bg-scale /home/thor/Photos/lambda.png &
+feh --bg-scale $HOME/Photos/lambda.png &
 
 /usr/bin/VBoxClient-all
 
