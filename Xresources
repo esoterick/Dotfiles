@@ -1,50 +1,26 @@
-urxvt*termName:		rxvt
-urxvt*loginShell:	true
-urxvt*scrollBar:	false
-urxvt*secondaryScroll:	true
-urxvt*saveLines:	65535
-urxvt*cursorBlink:	true
-urxvt*font: 		xft:Fira Mono:pixelsize=10:antialias=true
-urxvt*boldFont:		xft:Fira Mono:pixelsize=10:antialias=true
-urxvt*letterSpace:	-2
-urxvt*perl-ext-launcher: default,matcher
-urxvt*matcher.button: 1
-urxvt*urlLauncher:	/usr/bin/firefox
-urxvt*matcher.button:	1
-urxvt*cutchars:		`"()'*<>[]{|}
-urxvt*cursorColor:	#dcdcdc
-urxvt*geometry:		95x25
-urxvt*urgentOnBell:	false
-urxvt*visualBell:	false
-!urxvt*borderLess:	false
-!urxvt*borderWidth:	1
-!urxvt*internalBorder:	0
-
-! Colors ------------------------------------------
-
-!*foreground:		#ffffff
-!*background:		#000000
-!!black
-!*color0:		#000000
-!*color8:		#777777
-!!red
-!*color1:		#cd0000
-!*color9:		#ff0000
-!!green
-!*color2:		#b1d631
-!*color10:		#b1d631
-!!yellow
-!*color3:		#ff8700
-!*color11:		#ff8700
-!!blue
-!*color4:		#396398
-!*color12:		#396398
-!!magenta
-!*color5:		#b7416e
-!*color13:		#b7416e
-!!cyan
-!*color6:		#577377
-!*color14:		#577377
-!!white
-!*color7:		#b5b5b5
-!*color15:		#ffffff
+urxvt*termName:                 rxvt
+urxvt*loginShell:               true
+urxvt*scrollBar:                false
+urxvt*secondaryScroll:          true
+urxvt*saveLines:                65535
+urxvt*cursorBlink:              true
+urxvt*font:                     xft:Fira Mono:pixelsize=10:antialias=true
+urxvt*boldFont:		            xft:Fira Mono:pixelsize=10:antialias=true
+urxvt*letterSpace:	            -2
+urxvt*matcher.button:           1
+urxvt*perl-ext-common:          default,clipboard,url-select,keyboard-select,selection-to-clipboard
+urxvt*url-select.launcher:      /usr/bin/firefox
+urxvt*url-select.underline:     true
+urxvt*keysym.C-i:               perl:url-select:select_next
+urxvt*keysym.M-s:               perl:keyboard-select:search
+urxvt*keysym.Shift-Control-c:   perl:clipboard:copy
+urxvt*keysym.Shift-Control-v:   perl:clipboard:paste
+urxvt*iso14755:                 False
+urxvt*clipboard.copycmd:        xsel -ib
+urxvt*clipboard.pastecmd:       xsel -ob
+urxvt*colorUL:                  #cd546c
+urxvt*cursorColor:	            #dcdcdc
+urxvt*geometry:		            95x25
+urxvt*urgentOnBell:	            false
+urxvt*visualBell:	            false
+urxvt*cutchars:		            `"()'*<>[]{|}
