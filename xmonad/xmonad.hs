@@ -201,9 +201,11 @@ myKeys =
         , ("M-f",               raiseMaybe (runInTerm "-title ranger" "ranger") (title =? "ranger"))
         , ("M-v",           	raiseMaybe (runInTerm "-title weechat" "weechat-curses") (title =? "weechat"))
         , ("M-o",           	raiseMaybe (runInTerm "-title htop" "htop") (title =? "htop"))
+        , ("M-m",           	raiseMaybe (runInTerm "-title ncmpcpp" "ncmpcpp") (title =? "ncmpcpp"))
         , ("M-M1-f",            runOrCopy "urxvtc -title ranger -e ranger" (title =? "ranger"))
-        , ("M-M!-v",           	runOrCopy "urxvtc -title weechat -e weechat-curses" (title =? "weechat"))
+        , ("M-M1-v",           	runOrCopy "urxvtc -title weechat -e weechat-curses" (title =? "weechat"))
         , ("M-M1-o",            runOrCopy "urxvtc -title htop -e htop" (title =? "htop"))
+        , ("M-M1-m",            runOrCopy "urxvtc -title ncmpcpp -e ncmpcpp" (title =? "ncmpcpp"))
 
 -- Prompts
         , ("M-,",               goToSelected $ myGSConfig myGridConfig)
@@ -281,10 +283,10 @@ myLayoutHook = avoidStruts $ mouseResize $ windowArrange $ T.toggleLayouts float
 
 
 ---STATUSBAR
-myBitmapsDir = "/home/thor/.xmonad/statusbar/icons"
+myBitmapsDir = "~/.xmonad/statusbar/icons"
 
 myXmonadBarL = "dzen2 -x '0' -y '0' -h '16' -w '840' -ta 'l' -fg '"++myColorWhite++"' -bg '"++myColorBG++"' -fn '"++myFont++"'"
-myXmonadBarR = "conky -c /home/thor/.xmonad/statusbar/conky_dzen | dzen2 -x '840' -y '0' -w '840' -h '16' -ta 'r' -bg '"++myColorBG++"' -fg '"++myColorWhite++"' -fn '"++myFont++"'"
+myXmonadBarR = "conky -c ~/.xmonad/statusbar/conky_dzen | dzen2 -x '840' -y '0' -w '840' -h '16' -ta 'r' -bg '"++myColorBG++"' -fg '"++myColorWhite++"' -fn '"++myFont++"'"
 
 myLogHook h  = dynamicLogWithPP $ defaultPP
       { ppOutput           = hPutStrLn h
@@ -312,7 +314,7 @@ myLogHook h  = dynamicLogWithPP $ defaultPP
 
 -- AUTOSTART
 myStartupHook = do
---          spawnOnce "/usr/bin/urxvtd -q -f -o"
+	  spawnOnce "/usr/bin/urxvtd -q -f -o"
           spawnOnce "xsetroot -cursor_name left_ptr &"
           spawnOnce "unclutter &"
 --          spawnOnce "sh ~/.fehbg &"
