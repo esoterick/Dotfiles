@@ -3,7 +3,7 @@ HISTSIZE=10000
 SAVEHIST=10000
 bindkey -e
 
-zstyle :compinstall filename '/home/thor/.zshrc'
+zstyle :compinstall filename "$HOME/.zshrc"
 
 autoload -U colors && colors
 autoload -Uz compinit && compinit
