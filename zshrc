@@ -34,11 +34,14 @@ function error_code {
     fi
 }
 
+function get_wifi_ip {
+    ip addr show wlp3s0b1 | egrep "inet\s" | awk '{ print $2}' | cut -d "/" -f1
+}
+
 last_command="%(?.>>.<<)"
 
 set_prompt () {
-    PROMPT="
-%{$fg[red]%}:: %{$fg[white]%}$(collapse_pwd)%{$fg[red]%} :: $(ssh_state)
+    PROMPT="%{$fg[red]%}>> %{$fg[white]%}$(get_wifi_ip) %{$fg[red]%}>> %{$fg[white]%}$(collapse_pwd)%{$fg[red]%} >> $(ssh_state)
 %{$fg[white]%}$last_command%{$reset_color%} "
     RPROMPT="$(error_code)%{$reset_color%}"
 }
