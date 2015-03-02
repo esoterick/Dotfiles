@@ -314,11 +314,11 @@ myLogHook h  = dynamicLogWithPP $ defaultPP
 
 -- AUTOSTART
 myStartupHook = do
-	  spawnOnce "/usr/bin/urxvtd -q -f -o"
+          spawnOnce "urxvtc -title terminal -e tmux &"
           spawnOnce "xsetroot -cursor_name left_ptr &"
           spawnOnce "unclutter &"
+          spawnOnce "mpd ~/.config/mpd/mpd.conf &"
 --          spawnOnce "sh ~/.fehbg &"
---          spawnOnce "mpd &"
 --          spawnOnce "compton -c -b -e 0.8 -t -8 -l -9 -r 6 -o 0.7 -m 1.0 &"
 --          spawnOnce "xautolock -time 15 -locker 'i3lock -ubi /home/logan/images/accueil.png' &"
 --          spawnOnce "gnome-keyring-daemon --start --components=pkcs11 &"

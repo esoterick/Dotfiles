@@ -31,7 +31,7 @@ xset +fp ~/.fonts
 xset +fp /usr/share/fonts
 xset fp rehash
 
-xsetroot -cursor_name left_ptr &
+#xsetroot -cursor_name left_ptr &
 
 /usr/bin/urxvtd -q -f -o &
 
