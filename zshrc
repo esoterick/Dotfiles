@@ -65,3 +65,9 @@ alias ls='ls --color'
 function update_mirrors {
     sudo reflector --verbose -l 200 -p http --sort rate --save /etc/pacman.d/mirrorlist
 }
+
+if [ -f "${HOME}/.gpg-agent-info" ]; then
+  . "${HOME}/.gpg-agent-info"
+  export GPG_AGENT_INFO
+  export SSH_AUTH_SOCK
+fi
