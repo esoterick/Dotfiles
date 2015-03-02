@@ -163,7 +163,7 @@ myKeys =
 -- Layouts
         , ("M-S-<Space>",       sendMessage ToggleStruts)
         , ("M-d",               asks (XMonad.layoutHook . config) >>= setLayout)
-        , ("M-<KP_Enter>",      sendMessage NextLayout)
+        , ("M-n",      sendMessage NextLayout)
         , ("M-S-f",             sendMessage (T.Toggle "float"))
         , ("M-S-g",             sendMessage (T.Toggle "gimp"))
         , ("M-S-x",             sendMessage $ Toggle REFLECTX)
@@ -215,7 +215,6 @@ myKeys =
 -- Scratchpads
         , ("M-<Tab>",           namedScratchpadAction myScratchpads "terminal")
         , ("M-c",               namedScratchpadAction myScratchpads "wcalc")
-        , ("M-n",               namedScratchpadAction myScratchpads "music")
         , ("<XF86Tools>",       namedScratchpadAction myScratchpads "music")
 
 -- Multimedia Keys
