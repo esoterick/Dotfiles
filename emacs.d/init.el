@@ -13,7 +13,7 @@
 ;; Theme
 (load-theme 'solarized-dark t)
 (set-cursor-color "firebrick")
-(set-frame-font "Fira Mono-8" nil t)
+(set-frame-font "dina-6" nil t)
 (require 'powerline)
 (powerline-default-theme)
 
@@ -54,13 +54,13 @@ use to determine if the package is installed/loaded."
 ;; Old M-x
 ;; (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 (defadvice smex (around space-inserts-hyphen activate compile)
-        (let ((ido-cannot-complete-command
-               `(lambda ()
-                  (interactive)
-                  (if (string= " " (this-command-keys))
-                      (insert ?-)
-                    (funcall ,ido-cannot-complete-command)))))
-          ad-do-it))
+  (let ((ido-cannot-complete-command
+         `(lambda ()
+            (interactive)
+            (if (string= " " (this-command-keys))
+                (insert ?-)
+              (funcall ,ido-cannot-complete-command)))))
+    ad-do-it))
 
 ;; Projectile
 (require 'ack-and-a-half)
