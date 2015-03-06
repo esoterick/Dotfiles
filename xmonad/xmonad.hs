@@ -62,7 +62,7 @@ import XMonad.Prompt (defaultXPConfig, XPConfig(..), XPPosition(Top), Direction1
 
 ---SETTINGS
 -- Styles
-myFont          = "-artwiz-nu-medium-*-normal-*-11-*-*-*-*-*-*-*"
+myFont          = "-artwiz-nu-medium-*-normal-*-12-*-*-*-*-*-*-*"
 myBorderWidth   = 1
 myColorBG       = "#181512"
 myColorWhite    = "#eddcd3"
