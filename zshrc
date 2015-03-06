@@ -50,24 +50,9 @@ add-zsh-hook precmd set_prompt
 
 export PATH="$HOME/.cask/bin:$PATH"
 
-envfile="$HOME/.gnupg/gpg-agent.env"
-if [[ -e "$envfile" ]] && kill -0 $(grep GPG_AGENT_INFO "$envfile" | cut -d: -f 2) 2> /dev/null; then
-    eval "$(cat "$envfile")"
-else
-    eval "$(gpg-agent --daemon --enable-ssh-support --write-env-file "$envfile" 2> /dev/null)" 
-fi
-
-export GPG_AGENT_INFO
-export SSH_AUTH_SOCK
-
 alias ls='ls --color'
+alias resoteric='rdesktop -g 90% 10.0.0.129'
 
 function update_mirrors {
     sudo reflector --verbose -l 200 -p http --sort rate --save /etc/pacman.d/mirrorlist
 }
-
-if [ -f "${HOME}/.gpg-agent-info" ]; then
-  . "${HOME}/.gpg-agent-info"
-  export GPG_AGENT_INFO
-  export SSH_AUTH_SOCK
-fi
