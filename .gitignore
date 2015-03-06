@@ -32,3 +32,6 @@ tramp
 # cask packages
 .cask/
 \#*
+
+# Ignore url/cache
+emacs.d/url/cache
