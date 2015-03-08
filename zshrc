@@ -52,7 +52,32 @@ export PATH="$HOME/.cask/bin:$PATH"
 
 alias ls='ls --color'
 alias resoteric='rdesktop -g 90% 10.0.0.129'
+alias grep='grep --color'
+alias emacsc='emacsclient -n -c'
+
+function pmgrep { sudo pacman -Ss $* | grep $* -A 1 }
 
 function update_mirrors {
     sudo reflector --verbose -l 200 -p http --sort rate --save /etc/pacman.d/mirrorlist
 }
+
+function gpg_start {
+    gnupginf="${HOME}/.gnupg/gpg-agent-info"
+    if pgrep -u "${USER}" gpg-agent >/dev/null 2>&1; then
+        source $gnupginf
+    else
+        gpg-agent --daemon > $gnupginf
+    fi
+}
+
+function src() {
+    autoload -U zrecompile
+    [ -f ~/.zshrc ] && zrecompile -p ~/.zshrc
+    [ -f ~/.zcompdump ] && zrecompile -p ~/.zcompdump
+    [ -f ~/.zcompdump ] && zrecompile -p ~/.zcompdump
+    [ -f ~/.zshrc.zwc.old ] && rm -f ~/.zshrc.zwc.old
+    [ -f ~/.zcompdump.zwc.old ] && rm -f ~/.zcompdump.zwc.old
+    source ~/.zshrc
+}
+
+gpg_start
