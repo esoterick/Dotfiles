@@ -163,7 +163,7 @@ myKeys =
 -- Layouts
         , ("M-S-<Space>",       sendMessage ToggleStruts)
         , ("M-d",               asks (XMonad.layoutHook . config) >>= setLayout)
-        , ("M-n",      sendMessage NextLayout)
+        , ("M-n",               sendMessage NextLayout)
         , ("M-S-f",             sendMessage (T.Toggle "float"))
         , ("M-S-g",             sendMessage (T.Toggle "gimp"))
         , ("M-S-x",             sendMessage $ Toggle REFLECTX)
@@ -195,7 +195,7 @@ myKeys =
 
 -- Apps
         , ("M-<Return>",        spawn "urxvtc -title urxvt")
-        , ("M-<Space>",         spawn "dmenu_run -nb '#181512' -nf '#989584' -sb '#181512' -sf '#cd546c' -p '>>' -fn '-*-nu-medium-*-*-*-*-*-*-*-*-*-*-*' -i")
+        , ("M-<Space>",         spawn "dmenu_run -nb '#181512' -nf '#989584' -sb '#181512' -sf '#cd546c' -p '>>' -fn '-artwiz-nu-medium-*-normal-*-12-*-*-*-*-*-*-*' -i")
         , ("C-<Space>",         spawn "pkill dunst")
         , ("M-g",               spawn "magnet")
         , ("M-f",               raiseMaybe (runInTerm "-title ranger" "ranger") (title =? "ranger"))
@@ -213,9 +213,9 @@ myKeys =
         , ("M-:",               changeDir myPromptConfig)
 
 -- Scratchpads
-        , ("M-<Tab>",           namedScratchpadAction myScratchpads "terminal")
-        , ("M-c",               namedScratchpadAction myScratchpads "wcalc")
-        , ("<XF86Tools>",       namedScratchpadAction myScratchpads "music")
+        -- , ("M-<Tab>",           namedScratchpadAction myScratchpads "terminal")
+        -- , ("M-c",               namedScratchpadAction myScratchpads "wcalc")
+        -- , ("<XF86Tools>",       namedScratchpadAction myScratchpads "music")
 
 -- Multimedia Keys
         , ("<XF86AudioPlay>",   spawn "ncmpcpp toggle")
@@ -252,7 +252,7 @@ myManageHook = placeHook (withGaps (20,12,12,12) (smart (0.5,0.5))) <+> insertPo
             myTermApps    = ["urxvtc", "xterm", "xfce4-terminal", "xfontsel"]
             myWebApps     = ["Navigator", "newsbeuter", "mutt", "luakit", "midori", "Mail", "dwb", "Chromium", "firefox"]
             myMediaApps   = ["easytag", "sonata", "comix", "inkscape", "vlc", "zathura", "gnome-mplayer", "Audacity", "hotot", "ncmpcpp", "weechat", "mplayer", "gimp", "gimp-2.8"]
-            mySystApps    = ["ranger", "thunar", "Thunar", "lxappearance", "geany", "nitrogen", "Qt-subapplication", "gparted", "bleachbit"]
+            mySystApps    = ["ranger", "thunar", "Thunar", "lxappearance", "geany", "nitrogen", "Qt-subapplication", "gparted", "bleachbit", "emacsclient"]
 
             myFloatApps   = ["Dialog", "htop", "file-roller", "nitrogen", "display", "feh", "xmessage", "trayer"]
             myUnfloatApps = ["Gimp"]
@@ -267,7 +267,7 @@ myLayoutHook = avoidStruts $ mouseResize $ windowArrange $ T.toggleLayouts float
                 myDefaultLayout
     where
         myTermLayout    = workspaceDir "~"                 $ oneBig  ||| space ||| lined ||| grid
-        myWebLayout     = workspaceDir "~/web" 		   $ monocle ||| oneBig ||| space ||| lined
+        myWebLayout     = workspaceDir "~/web" 		       $ monocle ||| oneBig ||| space ||| lined
         myMediaLayout   = workspaceDir "~/videos"          $ T.toggleLayouts gimp $ monocle ||| oneBig ||| space ||| lined
         mySystLayout    = workspaceDir "~"                 $ lined ||| oneBig ||| space ||| monocle ||| grid
         myDefaultLayout = workspaceDir "/"                 $ float ||| oneBig ||| space ||| lined ||| monocle ||| grid
@@ -317,6 +317,7 @@ myStartupHook = do
           spawnOnce "xsetroot -cursor_name left_ptr &"
           spawnOnce "unclutter &"
           spawnOnce "mpd ~/.config/mpd/mpd.conf &"
+          spawnOnce "emacs --daemon"
 --          spawnOnce "sh ~/.fehbg &"
 --          spawnOnce "compton -c -b -e 0.8 -t -8 -l -9 -r 6 -o 0.7 -m 1.0 &"
 --          spawnOnce "xautolock -time 15 -locker 'i3lock -ubi /home/logan/images/accueil.png' &"
