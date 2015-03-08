@@ -13,7 +13,10 @@
 ;; Theme
 (load-theme 'solarized-dark t)
 (set-cursor-color "firebrick")
-(set-frame-font "dina-6" nil t)
+(set-frame-font "ProggyTinyTT-12" nil t)
+(set-default-font "ProggyTinyTT-12" nil t)
+(setq default-frame-alist '((font . "ProggySquareTT-12")))
+
 (require 'powerline)
 (powerline-default-theme)
 
@@ -112,6 +115,7 @@ use to determine if the package is installed/loaded."
 ;; GUI config
 (menu-bar-mode -1)
 (toggle-scroll-bar -1)
+(scroll-bar-mode -1)
 (tool-bar-mode -1)
 (setq inhibit-startup-screen t)
 
