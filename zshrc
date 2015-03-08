@@ -80,4 +80,6 @@ function src() {
     source ~/.zshrc
 }
 
+eval $(ssh-agent) >/dev/null 2>&1
+
 gpg_start
