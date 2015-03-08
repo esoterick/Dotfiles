@@ -4,9 +4,9 @@ urxvt*scrollBar:                false
 urxvt*secondaryScroll:          true
 urxvt*saveLines:                65535
 urxvt*cursorBlink:              true
-urxvt*font:                     xft:dina:pixelsize=6
-urxvt*boldFont:		            xft:dina:pixelsize=6
-#urxvt*letterSpace:	            -1
+urxvt*font:                     xft:ProggyTinyTT:pixelsize=16
+urxvt*boldFont:		            xft:ProggyTinyTT:pixelsize=16
+urxvt*letterSpace:	            -1
 urxvt*matcher.button:           1
 urxvt*perl-ext-common:          default,clipboard,url-select,keyboard-select,selection-to-clipboard
 urxvt*url-select.launcher:      /usr/bin/firefox
@@ -25,8 +25,8 @@ urxvt*urgentOnBell:	            false
 urxvt*visualBell:	            false
 urxvt*cutchars:		            `"()'*<>[]{|}
 
-Xft.autohint: 0
-Xft.lcdfilter:  lcddefault
-Xft.hintstyle:  hintslight
-Xft.hinting: 1
-Xft.antialias: 1
+!Xft.autohint: 0
+!Xft.lcdfilter:  lcddefault
+!Xft.hintstyle:  hintslight
+!Xft.hinting: 1
+!Xft.antialias: 1
