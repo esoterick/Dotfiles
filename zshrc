@@ -41,7 +41,7 @@ function get_wifi_ip {
 last_command="%(?.>>.<<)"
 
 set_prompt () {
-    PROMPT="%{$fg[red]%}>> %{$fg[white]%}$(get_wifi_ip) %{$fg[red]%}>> %{$fg[white]%}$(collapse_pwd)%{$fg[red]%} >> $(ssh_state)
+    PROMPT="%{$fg[red]%}>> %{$fg[white]%}$(whoami) %{$fg[red]%}>> %{$fg[white]%}$(get_wifi_ip) %{$fg[red]%}>> %{$fg[white]%}$(collapse_pwd)%{$fg[red]%} >> $(ssh_state)
 %{$fg[white]%}$last_command%{$reset_color%} "
     RPROMPT="$(error_code)%{$reset_color%}"
 }
