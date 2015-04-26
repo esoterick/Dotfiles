@@ -11,11 +11,11 @@
   (exec-path-from-shell-initialize))
 
 ;; Theme
-(load-theme 'solarized-dark t)
+(load-theme 'atom-dark t)
 (set-cursor-color "firebrick")
-(set-frame-font "ProggyTinyTT-12" nil t)
-(set-default-font "ProggyTinyTT-12" nil t)
-(setq default-frame-alist '((font . "ProggySquareTT-12")))
+(set-frame-font "Fira Mono-8" nil t)
+(set-default-font "Fira Mono-8" nil t)
+(setq default-frame-alist '((font . "Fira Mono-8")))
 
 ;; (require 'powerline)
 ;; (powerline-default-theme)
@@ -226,3 +226,6 @@ use to determine if the package is installed/loaded."
 (setq-default nyan-wavy-trail t)
 (nyan-mode)
 (nyan-start-animation)
+
+(add-hook 'haskell-mode-hook 'haskell-indent-mode)
+(add-hook 'haskell-mode-hook 'interactive-haskell-mode)
