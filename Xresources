@@ -4,9 +4,13 @@ urxvt*scrollBar:                false
 urxvt*secondaryScroll:          true
 urxvt*saveLines:                65535
 urxvt*cursorBlink:              true
-urxvt*font:                     xft:ProggyTinyTT:pixelsize=16
-urxvt*boldFont:		            xft:ProggyTinyTT:pixelsize=16
-urxvt*letterSpace:	            -1
+
+urxvt*font:                     xft:Fira Mono OT:pixelsize=10
+urxvt*boldFont:                 xft:Fira Mono OT:pixelsize=10
+
+!urxvt*font:                     xft:ProggyTinyTT:pixelsize=16
+!urxvt*boldFont:		         xft:ProggyTinyTT:pixelsize=16
+urxvt*letterSpace:	            -2
 urxvt*matcher.button:           1
 urxvt*perl-ext-common:          default,clipboard,url-select,keyboard-select,selection-to-clipboard
 urxvt*url-select.launcher:      /usr/bin/firefox
