@@ -11,7 +11,7 @@
   (exec-path-from-shell-initialize))
 
 ;; Theme
-(load-theme 'atom-dark t)
+(load-theme 'sanityinc-tomorrow-night t)
 (set-cursor-color "firebrick")
 (set-frame-font "Fira Mono-8" nil t)
 (set-default-font "Fira Mono-8" nil t)
@@ -25,6 +25,8 @@
 (eval-after-load 'magit
   (progn '(global-set-key (kbd "C-x g") 'magit-status)))
 
+(setq magit-last-seen-setup-instructions "1.4.0")
+
 ;; after macro per @jvalentini
 (defmacro after (mode &rest body)
   "`eval-after-load' MODE evaluate BODY.
@@ -35,35 +37,6 @@ use to determine if the package is installed/loaded."
   (declare (indent defun))
   `(eval-after-load (symbol-name ,mode)
      '(progn ,@body)))
-
-;; IDO
-;; (after 'ido-ubiquitous-autoloads
-;;   (setq ido-enable-flex-matching t
-;;         ido-auto-merge-work-directories-length -1
-;;         ido-use-faces nil
-;;         flx-ido-threshhold 2000
-;;         ido-everywhere t
-;;         ido-create-new-buffer 'always)
-;;   (ido-mode 1)
-;;   (ido-ubiquitous-mode 1)
-;;   (require 'flx-ido)
-;;   (flx-ido-mode 1))
-
-;; ;; smex
-;; (require 'smex)
-;; (smex-initialize)
-;; (global-set-key (kbd "M-x") 'smex)
-;; (global-set-key (kbd "M-X") 'smex-major-mode-commands)
-;; ;; Old M-x
-;; ;; (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
-;; (defadvice smex (around space-inserts-hyphen activate compile)
-;;   (let ((ido-cannot-complete-command
-;;          `(lambda ()
-;;             (interactive)
-;;             (if (string= " " (this-command-keys))
-;;                 (insert ?-)
-;;               (funcall ,ido-cannot-complete-command)))))
-;;     ad-do-it))
 
 ;; Projectile
 (require 'ack-and-a-half)
@@ -76,7 +49,7 @@ use to determine if the package is installed/loaded."
 
 ;; Snippets
 (require 'yasnippet)
-(yas-load-directory (concat root-dir "snippets"))
+;;(yas-load-directory (concat root-dir "snippets"))
 (yas-global-mode 1)
 
 ;; Indentation
@@ -251,3 +224,12 @@ use to determine if the package is installed/loaded."
 (define-key slime-repl-mode-map
     (read-kbd-macro paredit-backward-delete-key) nil))
 (add-hook 'slime-repl-mode-hook 'override-slime-repl-bindings-with-paredit)
+
+;; Flycheck
+(require 'flycheck)
+(add-hook 'after-init-hook #'global-flycheck-mode)
+(eval-after-load 'flycheck
+  '(add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
+
+(require 'flymake-rust)
+(add-hook 'rust-mode-hook 'flymake-rust-load)
