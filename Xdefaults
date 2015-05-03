@@ -1,37 +1,19 @@
-*cursorColor:                         #917154
-*colorIT:                             #E3AB8D
-*colorBD:                             #F0E5DF
-*colorUL:                             #cd546c
-*VT100.colorBDMode:                   true
-*VT100.colorBD:                       red
-*VT100.colorULMode:                   true
-*VT100.colorUL:                       magenta
-*VT100.veryBoldColors:                6
-
-*foreground:                          #eddcd3
-*background:                          #181512
-
-! Black                               Black !
-*color0:                              #252525
-*color8:                              #454545
-! Red                                 Red   !
-*color1:                              #CD546C
-*color9:                              #EF545F
-! Green                               Green !
-*color2:                              #A5AF86
-*color10:                             #BDC79E
-! Yellow                              Yellow!
-*color3:                              #CD7860
-*color11:                             #E88773
-! Blue                                Blue  !
-*color4:                              #7A9388
-*color12:                             #94B1A3
-! Magenta                             Magenta
-*color5:                              #917154
-*color13:                             #989584
-! Cyan                                Cyan  !
-*color6:                              #767D75
-*color14:                             #9DA69E
-! White                               White !
-*color7:                              #C2C2A8
-*color15:                             #DBDAC1
+*foreground:   #c5c8c6
+*background:   #1d1f21
+*cursorColor:  #aeafad
+*color0:       #000000
+*color1:       #912226
+*color2:       #778900
+*color3:       #ae7b00
+*color4:       #1d2594
+*color5:       #682a9b
+*color6:       #2b6651
+*color7:       #929593
+*color8:       #666666
+*color9:       #cc6666
+*color10:      #b5bd68
+*color11:      #f0c674
+*color12:      #81a2be
+*color13:      #b294bb
+*color14:      #8abeb7
+*color15:      #ecebec
