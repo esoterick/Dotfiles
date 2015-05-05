@@ -1,11 +1,15 @@
+;;; init.el --- Summary
+;;; Commentary:
+
+;;; Code:
 (require 'cask "~/.cask/cask.el")
 (cask-initialize)
 
 ;; Update Cask on install
 (require 'pallet)
 
-(setq root-dir (file-name-directory
-                (or (buffer-file-name) load-file-name)))
+;; (setq root-dir (file-name-directory
+;;                 (or (buffer-file-name) load-file-name)))
 (require 'exec-path-from-shell)
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
@@ -98,8 +102,7 @@ use to determine if the package is installed/loaded."
 (fset 'yes-or-no-p 'y-or-n-p)
 
 ;; Tab = 4 spaces
-(setq default-tab-width 4
-      tab-width 4)
+(setq tab-width 4)
 (setq-default tab-width 4
               indent-tabs-mode nil)
 
@@ -211,16 +214,16 @@ use to determine if the package is installed/loaded."
 (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
 
 (require 'eldoc)
-    (eldoc-add-command
-     'paredit-backward-delete
-     'paredit-close-round)
+(eldoc-add-command
+ 'paredit-backward-delete
+ 'paredit-close-round)
 
 (add-hook 'slime-repl-mode-hook (lambda () (paredit-mode +1)))
 
 ;; Stop SLIME's REPL from grabbing DEL,
 ;; which is annoying when backspacing over a '('
 (defun override-slime-repl-bindings-with-paredit ()
-(define-key slime-repl-mode-map
+  (define-key slime-repl-mode-map
     (read-kbd-macro paredit-backward-delete-key) nil))
 (add-hook 'slime-repl-mode-hook 'override-slime-repl-bindings-with-paredit)
 
