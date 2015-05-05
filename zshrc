@@ -51,7 +51,7 @@ add-zsh-hook precmd set_prompt
 export PATH="$HOME/.cask/bin:$PATH"
 
 alias ls='ls --color'
-alias resoteric='rdesktop -g 90% 10.0.0.129'
+alias resoteric='rdesktop -g 90% 10.0.0.10'
 alias grep='grep --color'
 alias emacsc='emacsclient -n -c'
 
