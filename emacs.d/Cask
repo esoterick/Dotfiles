@@ -12,6 +12,7 @@
 (depends-on "clojure-mode")
 (depends-on "coffee-mode")
 (depends-on "color-theme-sanityinc-tomorrow")
+(depends-on "company")
 (depends-on "elpy")
 (depends-on "evil")
 (depends-on "evil-leader")

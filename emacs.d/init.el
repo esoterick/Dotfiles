@@ -232,3 +232,11 @@ use to determine if the package is installed/loaded."
 
 (require 'flymake-rust)
 (add-hook 'rust-mode-hook 'flymake-rust-load)
+
+(autoload 'rust-mode "rust-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
+
+(setq racer-rust-src-path "~/rust/src/")
+(setq racer-cmd "~/Development/racer/target/release/racer")
+(add-to-list 'load-path "~/Development/racer/editors")
+(eval-after-load "rust-mode" '(require 'racer))
