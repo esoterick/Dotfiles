@@ -84,4 +84,4 @@ eval $(ssh-agent) >/dev/null 2>&1
 
 gpg_start
 
-export RUST_SRC_PATH=$HOME/rust/src
+export RUST_SRC_PATH=/usr/local/src/rustc-nightly/src
