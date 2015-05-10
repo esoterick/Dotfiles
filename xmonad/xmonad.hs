@@ -282,7 +282,7 @@ myLayoutHook = avoidStruts $ mouseResize $ windowArrange $ T.toggleLayouts float
 
 
 ---STATUSBAR
-myBitmapsDir = "~/.xmonad/statusbar/icons"
+myBitmapsDir = "/home/rlambert/.xmonad/statusbar/icons"
 
 myXmonadBarL = "dzen2 -x '0' -y '0' -h '16' -w '840' -ta 'l' -fg '"++myColorWhite++"' -bg '"++myColorBG++"' -fn '"++myFont++"'"
 myXmonadBarR = "conky -c ~/.xmonad/statusbar/conky_dzen | dzen2 -x '840' -y '0' -w '840' -h '16' -ta 'r' -bg '"++myColorBG++"' -fg '"++myColorWhite++"' -fn '"++myFont++"'"
@@ -298,14 +298,14 @@ myLogHook h  = dynamicLogWithPP $ defaultPP
       , ppOrder            = \(ws:l:t:_) -> [ws,l,t]
       , ppLayout           = dzenColor myColorRed myColorBG  .
                              (\x -> case x of
-                                 "oneBig"       -> "   ^i("++myBitmapsDir++"/mini/nbstack.xbm)"
-                                 "space"        -> "   ^i("++myBitmapsDir++"/mini/nbstack.xbm)"
-                                 "lined"        -> "   ^i("++myBitmapsDir++"/mini/bstack2.xbm)"
-                                 "monocle"      -> "   ^i("++myBitmapsDir++"/mini/monocle.xbm)"
-                                 "grid"         -> "   ^i("++myBitmapsDir++"/mini/grid.xbm)"
-                                 "float"        -> "   ^i("++myBitmapsDir++"/mini/float.xbm)"
-                                 "gimp"         -> "   ^i("++myBitmapsDir++"/fox.xbm)"
-                                 "Full"         -> "   ^i("++myBitmapsDir++"/mini/monocle2.xbm)"
+                                 "oneBig"       -> "^i("++myBitmapsDir++"/mini/nbstack.xbm)"
+                                 "space"        -> "^i("++myBitmapsDir++"/mini/nbstack.xbm)"
+                                 "lined"        -> "^i("++myBitmapsDir++"/mini/bstack2.xbm)"
+                                 "monocle"      -> "^i("++myBitmapsDir++"/mini/monocle.xbm)"
+                                 "grid"         -> "^i("++myBitmapsDir++"/mini/grid.xbm)"
+                                 "float"        -> "^i("++myBitmapsDir++"/mini/float.xbm)"
+                                 "gimp"         -> "^i("++myBitmapsDir++"/fox.xbm)"
+                                 "Full"         -> "^i("++myBitmapsDir++"/mini/monocle2.xbm)"
                                  _              -> x
                              )
       } where noScratchPad ws = if ws == "NSP" then "" else pad ws
