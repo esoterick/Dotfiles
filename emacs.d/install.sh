@@ -18,4 +18,4 @@ export PATH=$HOME/.cask/bin:$PATH
 
 cd ~/.emacs.d
 cask install
-#pip install --upgrade elpy flake8 rope jedi ipython
+pip install --upgrade elpy flake8 rope jedi ipython
