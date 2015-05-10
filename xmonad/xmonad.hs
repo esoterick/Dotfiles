@@ -62,7 +62,7 @@ import XMonad.Prompt (defaultXPConfig, XPConfig(..), XPPosition(Top), Direction1
 
 ---SETTINGS
 -- Styles
-myFont          = "ProggyTinyTT-12"
+myFont          = "FiraMono-7"
 myBorderWidth   = 1
 myColorBG       = "#181512"
 myColorWhite    = "#eddcd3"
@@ -195,7 +195,7 @@ myKeys =
 
 -- Apps
         , ("M-<Return>",        spawn "urxvtc -title urxvt")
-        , ("M-<Space>",         spawn "dmenu_run -nb '#181512' -nf '#989584' -sb '#181512' -sf '#cd546c' -p '>>' -fn 'ProggyTinyTT-12' -i")
+        , ("M-<Space>",         spawn "dmenu_run -nb '#181512' -nf '#989584' -sb '#181512' -sf '#cd546c' -p '>>' -fn 'FiraMono-7' -i")
         , ("C-<Space>",         spawn "pkill dunst")
         , ("M-g",               spawn "magnet")
         , ("M-f",               raiseMaybe (runInTerm "-title ranger" "ranger") (title =? "ranger"))
