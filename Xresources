@@ -5,8 +5,8 @@ urxvt*secondaryScroll:          true
 urxvt*saveLines:                65535
 urxvt*cursorBlink:              true
 
-urxvt*font:                     xft:FiraMono:pixelsize=12:antialias=true:hinting=true
-urxvt*boldFont:                 xft:FiraMono:pixelsize=12:antialias=true:hinting=true
+urxvt*font:                     xft:FiraMono:pixelsize=10:antialias=true:hinting=true
+urxvt*boldFont:                 xft:FiraMono:pixelsize=10:antialias=true:hinting=true
 
 urxvt*letterSpace:	            -2
 urxvt*matcher.button:           1
