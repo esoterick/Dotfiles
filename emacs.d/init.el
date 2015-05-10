@@ -17,8 +17,8 @@
 ;; Theme
 (load-theme 'sanityinc-tomorrow-night t)
 (set-cursor-color "firebrick")
-(set-frame-font "Fira Mono-10" nil t)
-(setq default-frame-alist '((font . "Fira Mono-10")))
+(set-frame-font "Fira Mono-8" nil t)
+(setq default-frame-alist '((font . "Fira Mono-8")))
 
 ;; (require 'powerline)
 ;; (powerline-default-theme)
