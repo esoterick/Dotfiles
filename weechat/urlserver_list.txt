@@ -1,0 +1,10 @@
+{
+  0: ('10/05/15 22:14:59', 'insaneinside', 'irc.mozilla.#rust', 'https://github.com/rust-lang/rust/blob/master/src/libarena/lib.rs#L187', "insaneinside\tLooking at the `arena::Arena` source <https://github.com/rust-lang/rust/blob/master/src/libarena/lib.rs#L187>, it seems that Arena depends on specifics of the rustc implementation to get a type's drop function.  Is this correct?"),
+  1: ('10/05/15 22:15:39', 'Mutabah', 'irc.mozilla.#rust', 'http://doc.rust-lang.org/std/vec/struct.Vec.html#method.into_boxed_slice', 'Mutabah\thttp://doc.rust-lang.org/std/vec/struct.Vec.html#method.into_boxed_slice'),
+  2: ('10/05/15 22:18:36', 'reem', 'irc.mozilla.#rust', 'https://crates.io/crates/membuf', 'reem\talternatively, I wrote a crate for handling heap buffers last week (but it requires beta) https://crates.io/crates/membuf'),
+  3: ('10/05/15 22:20:52', 'reem', 'irc.mozilla.#rust', 'http://doc.rust-lang.org/nightly/src/std/rt/unwind.rs.html#120-154', 'reem\tMutabah: I do not think so - it\xe2\x80\x99s just the current implementation uses thread locals in a non-reentrant way http://doc.rust-lang.org/nightly/src/std/rt/unwind.rs.html#120-154'),
+  4: ('10/05/15 22:26:00', 'dwrensha', 'irc.mozilla.#rust', 'http://doc.rust-lang.org/nightly/std/marker/trait.Send.html', 'dwrensha\theh, this is confusing. apparently negative impls of Send render as positive impls here: http://doc.rust-lang.org/nightly/std/marker/trait.Send.html'),
+  5: ('10/05/15 22:26:42', 'Murarth', 'irc.mozilla.#rust', 'https://github.com/rust-lang/rust/issues/25061', "Murarth\tdwrensha: Yeah, I filed an issue about that. It doesn't seem to have been noticed, though. https://github.com/rust-lang/rust/issues/25061"),
+  6: ('10/05/15 22:27:06', 'Yurume', 'irc.mozilla.#rust', 'https://github.com/rust-lang/rust/pull/23809', 'Yurume\tdwrensha: https://github.com/rust-lang/rust/pull/23809'),
+  7: ('10/05/15 22:44:19', 'reem', 'irc.mozilla.#rust', 'https://github.com/rust-lang/rust/issues/25264', 'reem\tI just filed this related issue yesterday https://github.com/rust-lang/rust/issues/25264'),
+}
