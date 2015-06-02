@@ -17,8 +17,8 @@
 ;; Theme
 (load-theme 'sanityinc-tomorrow-night t)
 (set-cursor-color "firebrick")
-(set-frame-font "Fira Mono-8" nil t)
-(setq default-frame-alist '((font . "Fira Mono-8")))
+(set-frame-font "Monaco-8" nil t)
+(setq default-frame-alist '((font . "Monaco-8")))
 
 ;; (require 'powerline)
 ;; (powerline-default-theme)
@@ -243,3 +243,26 @@ use to determine if the package is installed/loaded."
 (setq racer-cmd "~/Development/racer/target/release/racer")
 (add-to-list 'load-path "~/Development/racer/editors")
 (eval-after-load "rust-mode" '(require 'racer))
+
+;; org-mode
+(require 'org)
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+(setq org-log-done t)
+
+(defun build-ctags ()
+  (interactive)
+  (message "building project tags")
+  (let ((root (eproject-root)))
+    (shell-command (concat "ctags -e -R --extra=+fq --exclude=db --exclude=test --exclude=.git --exclude=public -f " root "TAGS " root)))
+  (visit-project-tags)
+  (message "tags built successfully"))
+
+(defun visit-project-tags ()
+  (interactive)
+  (let ((tags-file (concat (eproject-root) "TAGS")))
+    (visit-tags-table tags-file)
+    (message (concat "Loaded " tags-file))))
+
+(provide 'init)
+;;; init.el ends here
