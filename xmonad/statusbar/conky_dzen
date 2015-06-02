@@ -6,7 +6,7 @@ update_interval 1
 
 TEXT
 ${if_mpd_playing}^fg(\#989584)^i(/home/rlambert/.xmonad/statusbar/icons/mini/note6.xbm)${if_empty ${exec mpc | grep -i pause | cut -c 2-6}} ^fg(\#cd546c)${mpd_title}${else} ^fg(\#545454)Pause${endif}${endif}  \
-^fg(\#989584)^i(/home/rlambert/.xmonad/statusbar/icons/mini/cpu4.xbm)${execi 60 /home/rlambert/.xmonad/scripts/bar_cpu.sh}  \
-^fg(\#989584)^i(/home/rlambert/.xmonad/statusbar/icons/mini/mem4.xbm)${execi 60 /home/rlambert/.xmonad/scripts/bar_ram.sh}  \
-^fg(\#989584)^i(/home/rlambert/.xmonad/statusbar/icons/mini/wireless1.xbm)${execi 60 /home/rlambert/.xmonad/scripts/dzen_network.sh}  \
-^fg(\#989584)^i(/home/rlambert/.xmonad/statusbar/icons/mini/clock11.xbm) ^fg(\#cd546c)${time %H:%M}
+^fg(\#989584)^i(/home/rlambert/.xmonad/statusbar/icons/mini/wireless1.xbm)${execi 2 /home/rlambert/.xmonad/scripts/dzen_inet.sh} net \
+^fg(\#989584)^i(/home/rlambert/.xmonad/statusbar/icons/mini/cpu4.xbm)${execi 2 /home/rlambert/.xmonad/scripts/bar_cpu.sh}  \
+^fg(\#989584)^i(/home/rlambert/.xmonad/statusbar/icons/mini/mem4.xbm)${execi 2 /home/rlambert/.xmonad/scripts/bar_ram.sh}  \
+^fg(\#989584)^i(/home/rlambert/.xmonad/statusbar/icons/mini/clock11.xbm) ^fg(\#cd546c)${time %H:%M} \

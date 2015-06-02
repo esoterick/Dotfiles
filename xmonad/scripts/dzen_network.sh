@@ -1,8 +1,27 @@
 #!/bin/bash
 source $(dirname $0)/config.sh
 
-netctl=$(netctl list | egrep "^* " | awk '{print $2}' )
-ip4=$(ip a show wlp3s0b1 | egrep "^\s+inet\s" | awk '{print $2}')
-ip6=$(ip a show wlp3s0b1 | egrep "^\s+inet6\s" | awk '{print $2}')
+XPOS=$((800 + $XOFFSET))
+WIDTH="200"
+LINES="6"
 
-echo " ^fg($foreground)network ^fg(#cd546c)wlp3s0b1 ^fg($foreground)netctl ^fg(#cd546c)$netctl ^fg($foreground)ip4 ^fg(#cd546c)$ip4 ^fg($foreground)ip6 ^fg(#cd546c)$ip6"
+
+essid=$(ifconfig wlp3s0b1 | sed -n "1p" | awk -F '"' '{print $2}')
+mode=$(ifconfig wlp3s0b1 | sed -n "1p" | awk -F " " '{print $3}' | cut -c 7-14)
+freq=$(ifconfig wlp3s0b1 | sed -n "2p" | awk -F " " '{print $2}' | cut -d":" -f2)
+mac=$(ip a show wlp3s0b1 | sed -n "2p" | awk '{ print $2 }')
+lvl=$(ifconfig wlp3s0b1 | sed -n "6p" | awk -F " " '{print $4}' | cut -d"=" -f2)
+down=$(ip -s -s link ls wlp3s0b1 | sed -n "4p" | awk '{ $1=$1/1024^2; print $1,"MB" }')
+up=$(ip -s -s link ls wlp3s0b1 | sed -n "8p" | awk '{ $1=$1/1024^2; print $1,"MB" }')
+local=$(ip a show wlp3s0b1 | sed -n "3p" | awk '{ print $2 }')
+inet=$(wget http://checkip.dyndns.org/ -O - -o /dev/null | cut -d: -f 2 | cut -d\< -f 1)
+
+(
+    echo " ^fg($foreground)Network";
+    echo " ^fg($highlight)wlp3s0b1";
+    echo " IP:^fg($highlight)$inet ^fg($foreground)Type: ^fg($highlight)wireless";
+    echo " Down: ^fg($highlight)$down ^fg($foreground)Up: ^fg($highlight)$up";
+    echo " Local: ^fg($highlight)$local";  echo " MAC: ^fg($highlight)$mac";
+    echo " ";
+    sleep 60
+) | dzen2 -fg $foreground -bg $background -fn $font -x $XPOS -y $YPOS -w $WIDTH -l $LINES -e 'onstart=uncollapse;button1=exit;button3=exit'

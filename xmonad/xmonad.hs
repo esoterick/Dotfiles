@@ -62,7 +62,7 @@ import XMonad.Prompt (defaultXPConfig, XPConfig(..), XPPosition(Top), Direction1
 
 ---SETTINGS
 -- Styles
-myFont          = "FiraMono-7"
+myFont          = "lime"
 myBorderWidth   = 1
 myColorBG       = "#181512"
 myColorWhite    = "#eddcd3"
@@ -98,7 +98,7 @@ myGridConfig = colorRangeFromClassName
 myGSConfig colorizer  = (buildDefaultGSConfig myGridConfig)
     { gs_cellheight   = 65
     , gs_cellwidth    = 120
-    , gs_cellpadding  = 10
+    , gs_cellpadding  = 5
     , gs_font         = myFont
     }
 
@@ -195,9 +195,8 @@ myKeys =
 
 -- Apps
         , ("M-<Return>",        spawn "urxvtc -title urxvt")
-        , ("M-<Space>",         spawn "dmenu_run -nb '#181512' -nf '#989584' -sb '#181512' -sf '#cd546c' -p '>>' -fn 'FiraMono-7' -i")
+        , ("M-<Space>",         spawn "dmenu_run -nb '#181512' -nf '#989584' -sb '#181512' -sf '#cd546c' -p '>>' -fn 'lime' -i")
         , ("C-<Space>",         spawn "pkill dunst")
-        , ("M-g",               spawn "magnet")
         , ("M-f",               raiseMaybe (runInTerm "-title ranger" "ranger") (title =? "ranger"))
         , ("M-v",           	raiseMaybe (runInTerm "-title weechat" "weechat-curses") (title =? "weechat"))
         , ("M-o",           	raiseMaybe (runInTerm "-title htop" "htop") (title =? "htop"))
@@ -237,39 +236,43 @@ myMouseKeys = [ ((mod4Mask .|. shiftMask, button3), \w -> focus w >> Sqr.mouseRe
 
 
 -- WORKSPACES
-myWorkspaces = ["  i", " ii", "iii", " iv"]
+myWorkspaces = ["term", "web", "emacs", "chat", "util"]
 
 myManageHook = placeHook (withGaps (20,12,12,12) (smart (0.5,0.5))) <+> insertPosition End Newer <+> floatNextHook <+> namedScratchpadManageHook myScratchpads <+>
         (composeAll . concat $
-        [ [ resource  =? r --> doF (W.view "  i" . W.shift "  i") | r <- myTermApps    ]
-        , [ resource  =? r --> doF (W.view " ii" . W.shift " ii") | r <- myWebApps     ]
-        , [ resource  =? r --> doF (W.view "iii" . W.shift "iii") | r <- myMediaApps   ]
-        , [ resource  =? r --> doF (W.view " iv" . W.shift " iv") | r <- mySystApps    ]
-        , [ resource  =? r --> doFloat                            | r <- myFloatApps   ]
-        , [ className =? c --> ask >>= doF . W.sink               | c <- myUnfloatApps ]
+        [ [ resource  =? r --> doF (W.view "term"  . W.shift "term")  | r <- myTermApps    ]
+        , [ resource  =? r --> doF (W.view "web"   . W.shift "web")   | r <- myWebApps     ]
+        , [ resource  =? r --> doF (W.view "emacs" . W.shift "emacs") | r <- myEmacsApps   ]
+        , [ resource  =? r --> doF (W.view "chat"  . W.shift "chat")  | r <- myChatApps    ]
+        , [ resource  =? r --> doF (W.view "util"  . W.shift "util")  | r <- myUtilApps    ]
+        , [ resource  =? r --> doFloat                                | r <- myFloatApps   ]
+        , [ className =? c --> ask >>= doF . W.sink                   | c <- myUnfloatApps ]
         ]) <+> manageHook defaultConfig
         where
-            myTermApps    = ["urxvtc", "xterm", "xfce4-terminal", "xfontsel"]
-            myWebApps     = ["Navigator", "newsbeuter", "mutt", "luakit", "midori", "Mail", "dwb", "Chromium", "firefox"]
-            myMediaApps   = ["easytag", "sonata", "comix", "inkscape", "vlc", "zathura", "gnome-mplayer", "Audacity", "hotot", "ncmpcpp", "weechat", "mplayer", "gimp", "gimp-2.8"]
-            mySystApps    = ["ranger", "thunar", "Thunar", "lxappearance", "geany", "nitrogen", "Qt-subapplication", "gparted", "bleachbit", "emacsclient"]
+            myTermApps    = ["urxvtc"]
+            myWebApps     = ["Chromium", "firefox", "google-chrome-stable"]
+            myEmacsApps   = ["vlc", "ncmpcpp", "mplayer"]
+            myChatApps    = ["emacsclient", "weechat"]
+            myUtilApps    = ["ranger", "htop"]
 
-            myFloatApps   = ["Dialog", "htop", "file-roller", "nitrogen", "display", "feh", "xmessage", "trayer"]
+            myFloatApps   = ["Dialog", "file-roller", "nitrogen", "display", "feh", "xmessage", "trayer"]
             myUnfloatApps = ["Gimp"]
 
 
 ---LAYOUTS
 myLayoutHook = avoidStruts $ mouseResize $ windowArrange $ T.toggleLayouts float $ mkToggle (NBFULL ?? NOBORDERS ?? EOT) $ renamed [CutWordsLeft 4] $ maximize $ minimize $ boringWindows $ spacing 14 $
-                onWorkspace "  i" myTermLayout  $
-                onWorkspace " ii" myWebLayout   $
-                onWorkspace "iii" myMediaLayout $
-                onWorkspace " iv" mySystLayout
+                onWorkspace "term"  myTermLayout  $
+                onWorkspace "web"   myWebLayout   $
+                onWorkspace "emacs" myEmacsLayout $
+                onWorkspace "chat"  myChatLayout  $
+                onWorkspace "util"  myUtilLayout
                 myDefaultLayout
     where
         myTermLayout    = workspaceDir "~"                 $ oneBig  ||| space ||| lined ||| grid
-        myWebLayout     = workspaceDir "~/web" 		       $ monocle ||| oneBig ||| space ||| lined
-        myMediaLayout   = workspaceDir "~/videos"          $ T.toggleLayouts gimp $ monocle ||| oneBig ||| space ||| lined
-        mySystLayout    = workspaceDir "~"                 $ lined ||| oneBig ||| space ||| monocle ||| grid
+        myWebLayout     = workspaceDir "~/web" 		   $ monocle ||| oneBig ||| space ||| lined
+        myEmacsLayout   = workspaceDir "~/Development"     $ lined ||| oneBig ||| space ||| monocle ||| grid
+        myChatLayout    = workspaceDir "~"                 $ lined ||| oneBig ||| space ||| monocle ||| grid
+        myUtilLayout    = workspaceDir "~"                 $ lined ||| oneBig ||| space ||| monocle ||| grid
         myDefaultLayout = workspaceDir "/"                 $ float ||| oneBig ||| space ||| lined ||| monocle ||| grid
 
         oneBig          = renamed [Replace "oneBig"]       $ limitWindows 6  $ Mirror $ mkToggle (single MIRROR) $ mkToggle (single REFLECTX) $ mkToggle (single REFLECTY) $ OneBig (2/3) (2/3)
@@ -278,14 +281,12 @@ myLayoutHook = avoidStruts $ mouseResize $ windowArrange $ T.toggleLayouts float
         monocle         = renamed [Replace "monocle"]      $ limitWindows 20   Full
         grid            = renamed [Replace "grid"]         $ limitWindows 12 $ mkToggle (single MIRROR) $ Grid (16/10)
         float           = renamed [Replace "float"]        $ limitWindows 20   simplestFloat
-        gimp            = renamed [Replace "gimp"]         $ limitWindows 5  $ withIM 0.11 (Role "gimp-toolbox") $ reflectHoriz $ withIM 0.15 (Role "gimp-dock") Full
-
 
 ---STATUSBAR
 myBitmapsDir = "/home/rlambert/.xmonad/statusbar/icons"
 
-myXmonadBarL = "dzen2 -x '0' -y '0' -h '16' -w '840' -ta 'l' -fg '"++myColorWhite++"' -bg '"++myColorBG++"' -fn '"++myFont++"'"
-myXmonadBarR = "conky -c ~/.xmonad/statusbar/conky_dzen | dzen2 -x '840' -y '0' -w '840' -h '16' -ta 'r' -bg '"++myColorBG++"' -fg '"++myColorWhite++"' -fn '"++myFont++"'"
+myXmonadBarL = "dzen2 -x '0' -y '0' -h '14' -w '840' -ta 'l' -fg '"++myColorWhite++"' -bg '"++myColorBG++"' -fn '"++myFont++"'"
+myXmonadBarR = "conky -c ~/.xmonad/statusbar/conky_dzen | dzen2 -x '840' -y '0' -w '840' -h '14' -ta 'r' -bg '"++myColorBG++"' -fg '"++myColorWhite++"' -fn '"++myFont++"'"
 
 myLogHook h  = dynamicLogWithPP $ defaultPP
       { ppOutput           = hPutStrLn h
