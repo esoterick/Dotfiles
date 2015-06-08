@@ -105,7 +105,7 @@ use to determine if the package is installed/loaded."
   "cr" 'comment-or-uncomment-region
   "cv" 'evilnc-toggle-invert-comment-line-by-line
   "\\" 'evilnc-comment-operator ; if you prefer backslash key
-)
+  )
 
 ;; GUI config
 (menu-bar-mode -1)
