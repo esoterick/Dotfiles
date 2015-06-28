@@ -6,8 +6,8 @@ urxvt*saveLines:                65535
 urxvt*cursorBlink:              true
 
 
-urxvt*font:     xft:monaco:size=8
-urxvt*boldFont: xft:monaco:bold:size=8
+urxvt*font:     xft:monaco:size=10:antialias=false:hinting=true:pixelsize=10
+urxvt*boldFont: xft:monaco:bold:size=10:antialias=false:hinting=true:pixelsize=10
 !urxvt*font:                     xft:FiraMono:pixelsize=12:antialias=true:hinting=true
 !urxvt*boldFont:                 xft:FiraMono:pixelsize=12:antialias=true:hinting=true
 
