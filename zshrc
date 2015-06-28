@@ -3,57 +3,47 @@ HISTSIZE=10000
 SAVEHIST=10000
 bindkey -e
 
-zstyle :compinstall filename "$HOME/.zshrc"
+# zstyle :compinstall filename "$HOME/.zshrc"
 
 autoload -U colors && colors
 autoload -Uz compinit && compinit
 autoload -U promptinit && promptinit
 autoload -U add-zsh-hook
+autoload -U vcs_info && vcs_info
 
-setopt promptsubst
+zmodload zsh/complist
+zmodload zsh/terminfo
 
-function ssh_state {
-    if [ -n "$SSH_CONNECTION" ]; then
-        echo "%{$fg[red]%}<%{$fg[white]%}SSH%{$fg[red]%}> "
-    fi
-}
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-function collapse_pwd {
-    if [[ $(pwd) == $HOME ]]; then
-        echo $(pwd)
-    else
-        echo $(pwd | sed -e "s,^$HOME,~,")
-    fi
-}
+# setopt
+setopt \
+  autocd \
+  ksh_glob \
+  extendedglob \
+  prompt_subst \
+  inc_append_history
 
-function error_code {
-    if [[ $? == 0 ]]; then
-        echo ""
-    else
-        echo "%{$fg[white]%}<%{$fg[red]%}%?%{$fg[white]%}>%{$reset_color%}"
-    fi
-}
+bindkey -v
 
-function get_wifi_ip {
-    ip addr show wlp3s0b1 | egrep "inet\s" | awk '{ print $2}' | cut -d "/" -f1
-}
+for r in $HOME/.zsh/*.zsh; do
+  if [[ $DEBUG > 0 ]]; then
+    echo "zsh: sourcing $r"
+  fi
+  source $r
+done
 
-last_command="%(?.>>.<<)"
-
-set_prompt () {
-    PROMPT="%{$fg[red]%}>> %{$fg[white]%}$(whoami) %{$fg[red]%}>> %{$fg[white]%}$(get_wifi_ip) %{$fg[red]%}>> %{$fg[white]%}$(collapse_pwd)%{$fg[red]%} >> $(ssh_state)
-%{$fg[white]%}$last_command%{$reset_color%} "
-    RPROMPT="$(error_code)%{$reset_color%}"
-}
-
-add-zsh-hook precmd set_prompt
+eval $( dircolors -b $HOME/.zsh/LS_COLORS/LS_COLORS )
+export LS_COLORS
 
 export PATH="$HOME/.cask/bin:$PATH"
 
-alias ls='ls --color'
+#alias ls='ls --color'
+alias ls='ls++ --potsf'
 alias resoteric='rdesktop -g 90% 10.0.0.10'
 alias grep='grep --color'
 alias emacsc='emacsclient -n -c'
+alias cp='cp -v'
 
 function pmgrep { sudo pacman -Ss $* | grep $* -A 1 }
 
@@ -85,3 +75,11 @@ eval $(ssh-agent) >/dev/null 2>&1
 gpg_start
 
 export RUST_SRC_PATH=/usr/local/src/rustc-nightly/src
+export PATH=/usr/local/heroku/bin:$PATH
+export CLOUDSDK_PYTHON=/usr/bin/python2
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/home/rlambert/google-cloud-sdk/path.zsh.inc'
+
+# The next line enables zsh completion for gcloud.
+source '/home/rlambert/google-cloud-sdk/completion.zsh.inc'
