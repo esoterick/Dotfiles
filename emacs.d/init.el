@@ -18,8 +18,11 @@
 ;; Theme
 (load-theme 'sanityinc-tomorrow-night t)
 (set-cursor-color "firebrick")
-(set-frame-font "Monaco-8" nil t)
-(setq default-frame-alist '((font . "Monaco-8")))
+;;(set-frame-font "Monaco-8" nil t)
+;;(setq default-frame-alist '((font . "Monaco-8")))
+
+(set-frame-font "Monaco-10:pixelsize=10:antialias=none" nil t)
+(setq default-frame-alist '((font . "Monaco-10:pixelsize=10:antialias=none")))
 
 (require 'powerline)
 (powerline-default-theme)
