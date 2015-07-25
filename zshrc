@@ -83,3 +83,7 @@ source '/home/rlambert/google-cloud-sdk/path.zsh.inc'
 
 # The next line enables zsh completion for gcloud.
 source '/home/rlambert/google-cloud-sdk/completion.zsh.inc'
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+source $HOME/.zsh/creds.zsh
