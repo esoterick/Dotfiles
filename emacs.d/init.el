@@ -21,8 +21,8 @@
 ;;(set-frame-font "Monaco-8" nil t)
 ;;(setq default-frame-alist '((font . "Monaco-8")))
 
-(set-frame-font "Monaco-10:pixelsize=10:antialias=none" nil t)
-(setq default-frame-alist '((font . "Monaco-10:pixelsize=10:antialias=none")))
+(set-frame-font "ProggyTiny-6:antialias=none" nil t)
+(setq default-frame-alist '((font . "ProggyTiny-6:antialias=none")))
 
 (require 'powerline)
 (powerline-default-theme)
@@ -255,8 +255,14 @@ use to determine if the package is installed/loaded."
 (eval-after-load 'flycheck
   '(add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
 
+(eval-after-load 'flycheck
+  '(add-hook 'flycheck-mode-hook #'flycheck-haskell-setup))
+
 (require 'flymake-rust)
 (add-hook 'rust-mode-hook 'flymake-rust-load)
+
+(require 'flymake-hlint)
+(add-hook 'haskell-mode-hook 'flymake-hlint-load)
 
 (autoload 'rust-mode "rust-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
@@ -286,11 +292,25 @@ use to determine if the package is installed/loaded."
     (visit-tags-table tags-file)
     (message (concat "Loaded " tags-file))))
 
-;; Enable AutoComplete
-(require 'auto-complete)
-(auto-complete-mode t)
-(require 'auto-complete-config)
-(ac-config-default)
+;; Comany mode
+(require 'company)
+(add-hook 'after-init-hook 'global-company-mode)
+(add-to-list 'company-backends 'company-ghc)
+(add-to-list 'company-backends 'company-cabal)
+
+(setq company-tooltip-limit 20)
+(setq company-idle-delay .3)
+(setq company-echo-delay 0)
+(setq company-begin-commands '(self-insert-command))
+
+(require 'go-mode-autoloads)
+(require 'company-go)
+
+;;;; Enable AutoComplete
+;;(require 'auto-complete)
+;;(auto-complete-mode t)
+;;(require 'auto-complete-config)
+;;(ac-config-default)
 
 ;; Zone ScreenSaver 2min
 (setq zone-timer (run-with-idle-timer 120 t 'zone))

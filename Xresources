@@ -5,9 +5,8 @@ urxvt*secondaryScroll:          true
 urxvt*saveLines:                65535
 urxvt*cursorBlink:              true
 
-
-urxvt*font:     xft:monaco:size=10:antialias=false:hinting=true:pixelsize=10
-urxvt*boldFont: xft:monaco:bold:size=10:antialias=false:hinting=true:pixelsize=10
+URxvt.font            : -*-proggytiny-*-*-*-*-10-80-*-*-*-*-*-*
+URxvt.boldFont        : -*-proggytiny-*-*-*-*-10-80-*-*-*-*-*-*
 !urxvt*font:                     xft:FiraMono:pixelsize=12:antialias=true:hinting=true
 !urxvt*boldFont:                 xft:FiraMono:pixelsize=12:antialias=true:hinting=true
 
@@ -15,7 +14,7 @@ URxvt*.transparent: true
 ! URxvt*.shading: 0 to 99 darkens, 101 to 200 lightens
 URxvt*.shading: 40
 
-urxvt*letterSpace:	            -1.5
+!urxvt*letterSpace:	            -3
 urxvt*matcher.button:           1
 urxvt*perl-ext-common:          default,clipboard,url-select,keyboard-select,selection-to-clipboard
 urxvt*url-select.launcher:      /usr/bin/google-chrome-stable
