@@ -38,8 +38,6 @@ export LS_COLORS
 
 export PATH="$HOME/.cask/bin:$PATH"
 
-#alias ls='ls --color'
-alias ls='ls++ --potsf'
 alias resoteric='rdesktop -g 90% 10.0.0.10'
 alias grep='grep --color'
 alias emacsc='emacsclient -n -c'
