@@ -78,6 +78,8 @@ alias gem='sudo gem'
 alias handbrake='ghb'
 alias handbrakecli='HandBrakeCLI'
 
+alias sthor='ssh thor@104.131.30.207'
+
 # Fun with sed
 alias df='df -h | grep sd |\
 	sed -e "s_/dev/sda[1-9]_\x1b[34m&\x1b[0m_" |\
