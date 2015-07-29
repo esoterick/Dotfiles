@@ -1,4 +1,3 @@
-#!/usr/bin/bash
 background yes
 out_to_console yes
 out_to_x no
@@ -12,7 +11,8 @@ ${if_mpd_playing}
   ${endif}
 ${endif} \
 
-^fg(\#989584)^i(/home/rlambert/.xmonad/statusbar/icons/mini/batt10.xbm) ${execi 2 /home/rlambert/.xmonad/scripts/bar_battery.sh}  \
-^fg(\#989584)^i(/home/rlambert/.xmonad/statusbar/icons/mini/cpu4.xbm) ${execi 2 /home/rlambert/.xmonad/scripts/bar_cpu.sh}  \
-^fg(\#989584)^i(/home/rlambert/.xmonad/statusbar/icons/mini/mem4.xbm) ${execi 2 /home/rlambert/.xmonad/scripts/bar_ram.sh}  \
-^fg(\#989584)^i(/home/rlambert/.xmonad/statusbar/icons/mini/clock11.xbm) ^fg(\#cd546c)${time %H:%M} \
+^fg(\#989584)^i(/home/rlambert/.xmonad/statusbar/icons/mini/batt10.xbm) ${execi 60 /home/rlambert/.xmonad/scripts/bar_battery.sh} \
+^fg(\#989584)^i(/home/rlambert/.xmonad/statusbar/icons/mini/cpu4.xbm) ${execi 5 /home/rlambert/.xmonad/scripts/bar_cpu.sh} \
+^fg(\#989584)^i(/home/rlambert/.xmonad/statusbar/icons/mini/mem4.xbm) ${execi 5 /home/rlambert/.xmonad/scripts/bar_ram.sh} \
+^fg(\#989584)^i(/home/rlambert/.xmonad/statusbar/icons/mini/uparrow1.xbm) ^fg(\#cd546c)${execi 300 /home/rlambert/.xmonad/scripts/updates.sh} \
+^fg(\#989584)^i(/home/rlambert/.xmonad/statusbar/icons/mini/clock11.xbm) ^fg(\#cd546c)${execi 1 date +"%a %b %d %H:%M %Z"} \
