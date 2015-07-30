@@ -1,6 +1,6 @@
 #!/bin/sh
 
-feh --bg-scale $HOME/Photos/wolfmother.jpg &
+feh --bg-scale $HOME/Photos/paper.png &
 
 /usr/bin/VBoxClient-all
 
