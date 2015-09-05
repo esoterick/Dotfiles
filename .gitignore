@@ -38,3 +38,4 @@ tramp
 emacs.d/url/cache
 
 *.backup
+zsh/creds.zsh
