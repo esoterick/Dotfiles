@@ -78,7 +78,15 @@ alias gem='sudo gem'
 alias handbrake='ghb'
 alias handbrakecli='HandBrakeCLI'
 
-alias sthor='ssh thor@104.131.30.207'
+alias sthor='ssh -A thor@104.131.30.207'
+alias sodin='ssh -A root@45.55.89.22'
+alias stg-edhesive-users='ssh -A ubuntu@ec2-54-209-6-201.compute-1.amazonaws.com'
+alias stg-edhesive-local='ssh -A ubuntu@ec2-54-208-23-70.compute-1.amazonaws.com'
+alias stg-edhesive-cr='ssh -A ubuntu@ec2-54-208-131-153.compute-1.amazonaws.com'
+
+alias prd-edhesive-users='ssh -A ubuntu@ec2-54-208-184-211.compute-1.amazonaws.com'
+alias prd-edhesive-local='ssh -A ubuntu@ec2-54-209-30-15.compute-1.amazonaws.com'
+alias prd-edhesive-cr='ssh -A ubuntu@54.209.40.61'
 
 # Fun with sed
 alias df='df -h | grep sd |\

@@ -22,4 +22,19 @@ export SHELL='/bin/zsh'
 export EDITOR='vim'
 export MANPAGER='vimpager'
 
+export GOPATH=$HOME/go
+export PATH="$PATH:$GOPATH/bin"
+export PATH=~/.cabal/bin/:$PATH
 
+# The next line updates PATH for the Google Cloud SDK.
+source '/home/rlambert/google-cloud-sdk/path.zsh.inc'
+
+# The next line enables shell command completion for gcloud.
+source '/home/rlambert/google-cloud-sdk/completion.zsh.inc'
+
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk/jre
+export AWS_RDS_HOME=/home/rlambert/Tools/RDSCli-1.19.004
+export PATH=$PATH:$AWS_RDS_HOME/bin
+export EC2_REGION=us-east-1
+
+export PATH=$PATH:$HOME/google_appengine
