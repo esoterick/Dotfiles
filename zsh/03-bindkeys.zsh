@@ -17,9 +17,11 @@ bindkey "\e[7~" beginning-of-line
 bindkey "\eOH" beginning-of-line
 bindkey "\eOF" end-of-line
 # for freebsd console
-bindkey "\e[H" beginning-of-line
-bindkey "\e[F" end-of-line
 bindkey '\e[A' history-beginning-search-backward
 bindkey '\e[B' history-beginning-search-forward
+
+bindkey '^R' history-incremental-search-backward
+bindkey "^A" beginning-of-line
+bindkey "^E" end-of-line
 
 # vim: set ft=zsh :
