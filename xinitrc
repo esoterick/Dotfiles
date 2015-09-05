@@ -1,6 +1,6 @@
 #!/bin/sh
 
-feh --bg-scale $HOME/Photos/paper.png &
+feh --bg-scale $HOME/Pictures/dog.jpg &
 
 /usr/bin/VBoxClient-all
 
