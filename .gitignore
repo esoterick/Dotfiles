@@ -36,3 +36,5 @@ tramp
 
 # Ignore url/cache
 emacs.d/url/cache
+
+*.backup
