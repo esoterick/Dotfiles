@@ -96,8 +96,8 @@ myGridConfig = colorRangeFromClassName
     (0xcd,0x54,0x6c) -- active fg
 
 myGSConfig colorizer  = (buildDefaultGSConfig myGridConfig)
-    { gs_cellheight   = 65
-    , gs_cellwidth    = 120
+    { gs_cellheight   = 45
+    , gs_cellwidth    = 80
     , gs_cellpadding  = 5
     , gs_font         = myFont
     }
@@ -276,7 +276,7 @@ myLayoutHook = avoidStruts $ mouseResize $ windowArrange $ T.toggleLayouts float
         myDefaultLayout = workspaceDir "/"                 $ float ||| oneBig ||| space ||| lined ||| monocle ||| grid
 
         oneBig          = renamed [Replace "oneBig"]       $ limitWindows 6  $ Mirror $ mkToggle (single MIRROR) $ mkToggle (single REFLECTX) $ mkToggle (single REFLECTY) $ OneBig (2/3) (2/3)
-        space           = renamed [Replace "space"]        $ limitWindows 4  $ spacing 36 $ Mirror $ mkToggle (single MIRROR) $ mkToggle (single REFLECTX) $ mkToggle (single REFLECTY) $ OneBig (2/3) (2/3)
+        space           = renamed [Replace "space"]        $ limitWindows 4  $ spacing 20 $ Mirror $ mkToggle (single MIRROR) $ mkToggle (single REFLECTX) $ mkToggle (single REFLECTY) $ OneBig (2/3) (2/3)
         lined           = renamed [Replace "lined"]        $ limitWindows 3  $ Mirror $ mkToggle (single MIRROR) zoomRow
         monocle         = renamed [Replace "monocle"]      $ limitWindows 20   Full
         grid            = renamed [Replace "grid"]         $ limitWindows 12 $ mkToggle (single MIRROR) $ Grid (16/10)
@@ -322,7 +322,6 @@ myStartupHook = do
           spawnOnce "sh ~/.fehbg &"
           spawnOnce "compton -C -c -b -e 0.8 -t -8 -l -9 -r 6 -o 0.8 -i 0.8 -m 1.0 --focus-exclude n:e:dmenu --no-fading-openclose &"
 --          spawnOnce "xautolock -time 15 -locker 'i3lock -ubi /home/logan/images/accueil.png' &"
---          spawnOnce "gnome-keyring-daemon --start --components=pkcs11 &"
 
 
 -- CONFIG
