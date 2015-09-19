@@ -319,8 +319,8 @@ myStartupHook = do
           spawnOnce "unclutter &"
           spawnOnce "mpd ~/.config/mpd/mpd.conf &"
           spawnOnce "emacs --daemon"
---          spawnOnce "sh ~/.fehbg &"
---          spawnOnce "compton -c -b -e 0.8 -t -8 -l -9 -r 6 -o 0.7 -m 1.0 &"
+          spawnOnce "sh ~/.fehbg &"
+          spawnOnce "compton -C -c -b -e 0.8 -t -8 -l -9 -r 6 -o 0.8 -i 0.8 -m 1.0 --focus-exclude n:e:dmenu --no-fading-openclose &"
 --          spawnOnce "xautolock -time 15 -locker 'i3lock -ubi /home/logan/images/accueil.png' &"
 --          spawnOnce "gnome-keyring-daemon --start --components=pkcs11 &"
 
