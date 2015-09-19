@@ -38,3 +38,7 @@ export PATH=$PATH:$AWS_RDS_HOME/bin
 export EC2_REGION=us-east-1
 
 export PATH=$PATH:$HOME/google_appengine
+
+export PATH=$PATH:$HOME/go_appengine/
+
+source /home/rlambert/.rvm/scripts/rvm
