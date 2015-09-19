@@ -87,6 +87,7 @@ alias stg-edhesive-cr='ssh -A ubuntu@ec2-54-208-131-153.compute-1.amazonaws.com'
 alias prd-edhesive-users='ssh -A ubuntu@ec2-54-208-184-211.compute-1.amazonaws.com'
 alias prd-edhesive-local='ssh -A ubuntu@ec2-54-209-30-15.compute-1.amazonaws.com'
 alias prd-edhesive-cr='ssh -A ubuntu@54.209.40.61'
+alias prd-edhesive-util='ssh -A ubuntu@ec2-52-3-30-232.compute-1.amazonaws.com'
 
 # Fun with sed
 alias df='df -h | grep sd |\
