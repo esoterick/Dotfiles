@@ -1,5 +1,4 @@
-;; -*- mode: emacs-lisp -*-
-;; This file is loaded by Spacemacs at startup.
+;; -*- mode: emacs-liartup.
 ;; It must be stored in your home directory.
 
 (defun dotspacemacs/layers ()
@@ -171,6 +170,7 @@ before layers configuration."
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
   (setq clojure-enable-fancify-symbols t)
+  (setq tab-width 4)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
