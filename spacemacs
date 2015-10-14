@@ -49,7 +49,9 @@
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
    ;; the list `dotspacemacs-configuration-layers'
-   dotspacemacs-delete-orphan-packages t))
+   dotspacemacs-delete-orphan-packages t
+   )
+)
 
 (defun dotspacemacs/init ()
   "Initialization function.
@@ -76,20 +78,26 @@ before layers configuration."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(solarized-light
+   dotspacemacs-themes '(monokai
+                         solarized-light
                          solarized-dark
                          spacemacs-light
                          spacemacs-dark
                          leuven
-                         monokai
                          zenburn)
    ;; If non nil the cursor color matches the state color.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Fira Mono"
-                               :size 11
+   dotspacemacs-default-font '("Source Code Pro"
+                               :size 13
+                               :weight normal
+                               :width normal
                                :powerline-scale 1.1)
+
+   ;; dotspacemacs-default-font '("Fira Mono"
+   ;;                            :size 12
+   ;;                            :powerline-scale 1.1)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The leader key accessible in `emacs state' and `insert state'

@@ -114,6 +114,8 @@
     (sanityinc-tomorrow-night    . color-theme-sanityinc-tomorrow)
     (solarized-light . solarized-theme)
     (solarized-dark . solarized-theme)
+    (spacemacs-light . spacemacs-theme)
+    (spacemacs-dark . spacemacs-theme)
     (colorsarenice-dark  . colorsarenice-theme)
     (colorsarenice-light . colorsarenice-theme)
     (hemisu-dark  . hemisu-theme)
@@ -169,18 +171,26 @@ package name does not match theme name + `-theme' suffix.")
   ;; Unless Emacs stock themes
   (unless (memq theme (custom-available-themes))
     (cond
-     ;; solarized theme, official spacemacs theme
-     ((or (eq 'solarized-light theme)
-          (eq 'solarized-dark theme))
-      (add-to-list 'load-path (concat spacemacs-directory
-                                      "extensions/solarized-theme/"))
-      (require 'solarized)
-      (deftheme solarized-dark "The dark variant of the Solarized colour theme")
-      (deftheme solarized-light "The light variant of the Solarized colour theme"))
+     ;; official spacemacs theme
      ((or (eq 'spacemacs-light theme)
           (eq 'spacemacs-dark theme))
-      (add-to-list 'custom-theme-load-path (concat spacemacs-directory
-                                                   "extensions/spacemacs-theme")))
+      (spacemacs/load-or-install-package 'spacemacs-theme)
+      (add-to-list 'load-path (spacemacs//get-package-directory
+                               'spacemacs-theme))
+      (require 'spacemacs-common)
+      (deftheme spacemacs-dark "Spacemacs theme, the dark version")
+      (deftheme spacemacs-light "Spacemacs theme, the light version"))
+     ;; solarized theme
+     ((or (eq 'solarized-light theme)
+          (eq 'solarized-dark theme))
+      (add-to-list 'load-path
+                   (concat configuration-layer-directory
+                           "+distribution/spacemacs/local/solarized-theme/"))
+      (require 'solarized)
+      (deftheme solarized-dark
+        "The dark variant of the Solarized colour theme")
+      (deftheme solarized-light
+        "The light variant of the Solarized colour theme"))
      ;; themes with explicitly declared package names
      ((assq theme spacemacs-theme-name-to-package)
       (let* ((pkg (spacemacs//get-theme-package theme))

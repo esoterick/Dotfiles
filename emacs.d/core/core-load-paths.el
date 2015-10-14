@@ -27,9 +27,6 @@
 (defconst spacemacs-banner-official-png
   (expand-file-name (concat spacemacs-banner-directory "img/spacemacs.png"))
   "Spacemacs official banner image.")
-(defconst spacemacs-directory
-  (expand-file-name (concat user-emacs-directory "spacemacs/"))
-  "Spacemacs base directory.")
 (defconst spacemacs-cache-directory
   (expand-file-name (concat user-emacs-directory ".cache/"))
   "Spacemacs storage area for persistent files")
@@ -39,6 +36,9 @@
 (defconst spacemacs-docs-directory
   (expand-file-name (concat user-emacs-directory "doc/"))
   "Spacemacs documentation directory.")
+(defconst spacemacs-test-directory
+  (expand-file-name (concat user-emacs-directory "tests/"))
+  "Spacemacs tests directory.")
 
 (defconst user-home-directory
   (expand-file-name "~/")
