@@ -89,6 +89,8 @@ alias prd-edhesive-local='ssh -A ubuntu@ec2-54-209-30-15.compute-1.amazonaws.com
 alias prd-edhesive-cr='ssh -A ubuntu@54.209.40.61'
 alias prd-edhesive-util='ssh -A ubuntu@ec2-52-3-30-232.compute-1.amazonaws.com'
 
+alias lock='xsecurelock auth_pam_x11 saver_blank'
+
 # Fun with sed
 alias df='df -h | grep sd |\
 	sed -e "s_/dev/sda[1-9]_\x1b[34m&\x1b[0m_" |\
