@@ -25,6 +25,7 @@ export MANPAGER='vimpager'
 export GOPATH=$HOME/go
 export PATH="$PATH:$GOPATH/bin"
 export PATH=~/.cabal/bin/:$PATH
+export PATH=~/bin/:$PATH
 
 # The next line updates PATH for the Google Cloud SDK.
 source '/home/rlambert/google-cloud-sdk/path.zsh.inc'
@@ -42,3 +43,5 @@ export PATH=$PATH:$HOME/google_appengine
 export PATH=$PATH:$HOME/go_appengine/
 
 source /home/rlambert/.rvm/scripts/rvm
+
+export KUBERNETES_PROVIDER=vagrant
