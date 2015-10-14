@@ -1,0 +1,154 @@
+2015-09-19 14:04:34		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2015-09-19 14:05:20		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2015-09-19 14:05:33		script: downloading list of scripts...
+2015-09-19 14:05:34		script: 299 scripts for WeeChat 1.3
+2015-09-19 14:09:56		python: stdout/stderr: Traceback (most recent call last):
+2015-09-19 14:09:56		python: stdout/stderr:   File "/home/rlambert/Dotfiles/weechat/python/highlightxmpp.py", line 41, in <module>
+2015-09-19 14:09:56		python: stdout/stderr:     import xmpp
+2015-09-19 14:09:56		python: stdout/stderr: ImportError: No module named xmpp
+2015-09-19 14:09:56	 !!! 	python: unable to parse file "/home/rlambert/Dotfiles/weechat/python/highlightxmpp.py"
+2015-09-19 14:09:58		This appears to be the first time highmon has been run. For help and common set up hints see /highmon help
+2015-09-19 14:12:35		python: stdout/stderr: Package python-xmpp (xmpppy) must be installed to use Jabber protocol.
+2015-09-19 14:12:35		python: stdout/stderr: Get xmpppy with your package manager, or at this URL: http://xmpppy.sourceforge.net/
+2015-09-19 14:12:35	 !!! 	python: function "register" not found (or failed) in file "/home/rlambert/Dotfiles/weechat/python/jabber.py"
+2015-09-19 14:13:02		python: stdout/stderr: Missing package(s) for notify: No module named notify2
+2015-09-19 14:13:02		python: stdout/stderr: You must have notify2 installed.
+2015-09-19 14:13:02		python: stdout/stderr: Traceback (most recent call last):
+2015-09-19 14:13:02		python: stdout/stderr:   File "/home/rlambert/Dotfiles/weechat/python/notify.py", line 74, in <module>
+2015-09-19 14:13:02		python: stdout/stderr:     "low"      : notify2.URGENCY_LOW,
+2015-09-19 14:13:02		python: stdout/stderr: NameError: name 'notify2' is not defined
+2015-09-19 14:13:02	 !!! 	python: unable to parse file "/home/rlambert/Dotfiles/weechat/python/notify.py"
+2015-09-19 19:37:34	 !!! 	script: error downloading script "shell.py": curl error 6 (Could not resolve host: weechat.org) (URL: "https://weechat.org/files/scripts/shell.py")
+2015-09-19 19:49:01		python: scripts unloaded
+2015-09-20 09:52:23		ruby scripts loaded: hilites
+2015-09-20 09:52:24		perl scripts loaded: highmon
+2015-09-20 09:52:24		python: stdout/stderr: Package python-xmpp (xmpppy) must be installed to use Jabber protocol.
+2015-09-20 09:52:24		python: stdout/stderr: Get xmpppy with your package manager, or at this URL: http://xmpppy.sourceforge.net/
+2015-09-20 09:52:24	 !!! 	python: function "register" not found (or failed) in file "/home/rlambert/Dotfiles/weechat/python/autoload/jabber.py"
+2015-09-20 09:52:24		python: stdout/stderr: Traceback (most recent call last):
+2015-09-20 09:52:24		python: stdout/stderr:   File "/home/rlambert/Dotfiles/weechat/python/autoload/highlightxmpp.py", line 41, in <module>
+2015-09-20 09:52:24		python: stdout/stderr:     import xmpp
+2015-09-20 09:52:24		python: stdout/stderr: ImportError: No module named xmpp
+2015-09-20 09:52:24	 !!! 	python: unable to parse file "/home/rlambert/Dotfiles/weechat/python/autoload/highlightxmpp.py"
+2015-09-20 09:52:24		python: stdout/stderr: Missing package(s) for notify: No module named notify2
+2015-09-20 09:52:24		python: stdout/stderr: You must have notify2 installed.
+2015-09-20 09:52:24		python: stdout/stderr: Traceback (most recent call last):
+2015-09-20 09:52:24		python: stdout/stderr:   File "/home/rlambert/Dotfiles/weechat/python/autoload/notify.py", line 74, in <module>
+2015-09-20 09:52:24		python: stdout/stderr:     "low"      : notify2.URGENCY_LOW,
+2015-09-20 09:52:24		python: stdout/stderr: NameError: name 'notify2' is not defined
+2015-09-20 09:52:24	 !!! 	python: unable to parse file "/home/rlambert/Dotfiles/weechat/python/autoload/notify.py"
+2015-09-20 09:52:24		python scripts loaded: allquery, bitlbee_completion, bitlbee_typing_notice, go, grep
+2015-09-20 09:52:24		script: 299 scripts for WeeChat 1.3
+2015-09-20 09:52:24		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2015-09-20 09:52:46	 !!! 	irc: unable to add temporary server "freenode" because the addition of temporary servers with command /connect is currently disabled
+2015-09-20 09:52:46	 !!! 	irc: if you want to add a standard server, use the command "/server add" (see /help server); if you really want to add a temporary server (NOT SAVED), turn on the option irc.look.temporary_servers
+2015-09-21 09:29:03		python: scripts unloaded
+2015-09-23 19:18:06		ruby scripts loaded: hilites
+2015-09-23 19:18:06		perl scripts loaded: highmon
+2015-09-23 19:18:06		python: stdout/stderr: Package python-xmpp (xmpppy) must be installed to use Jabber protocol.
+2015-09-23 19:18:06		python: stdout/stderr: Get xmpppy with your package manager, or at this URL: http://xmpppy.sourceforge.net/
+2015-09-23 19:18:06	 !!! 	python: function "register" not found (or failed) in file "/home/rlambert/Dotfiles/weechat/python/autoload/jabber.py"
+2015-09-23 19:18:06		python: stdout/stderr: Traceback (most recent call last):
+2015-09-23 19:18:06		python: stdout/stderr:   File "/home/rlambert/Dotfiles/weechat/python/autoload/highlightxmpp.py", line 41, in <module>
+2015-09-23 19:18:06		python: stdout/stderr:     import xmpp
+2015-09-23 19:18:06		python: stdout/stderr: ImportError: No module named xmpp
+2015-09-23 19:18:06	 !!! 	python: unable to parse file "/home/rlambert/Dotfiles/weechat/python/autoload/highlightxmpp.py"
+2015-09-23 19:18:06		python: stdout/stderr: Missing package(s) for notify: No module named notify2
+2015-09-23 19:18:06		python: stdout/stderr: You must have notify2 installed.
+2015-09-23 19:18:06		python: stdout/stderr: Traceback (most recent call last):
+2015-09-23 19:18:06		python: stdout/stderr:   File "/home/rlambert/Dotfiles/weechat/python/autoload/notify.py", line 74, in <module>
+2015-09-23 19:18:06		python: stdout/stderr:     "low"      : notify2.URGENCY_LOW,
+2015-09-23 19:18:06		python: stdout/stderr: NameError: name 'notify2' is not defined
+2015-09-23 19:18:06	 !!! 	python: unable to parse file "/home/rlambert/Dotfiles/weechat/python/autoload/notify.py"
+2015-09-23 19:18:06		python scripts loaded: allquery, bitlbee_completion, bitlbee_typing_notice, go, grep
+2015-09-23 19:18:06		script: downloading list of scripts...
+2015-09-23 19:18:06		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2015-09-23 19:18:07		script: 299 scripts for WeeChat 1.3
+2015-09-23 19:18:07		python: scripts unloaded
+2015-09-24 18:29:13		ruby scripts loaded: hilites
+2015-09-24 18:29:13		perl scripts loaded: highmon
+2015-09-24 18:29:13		python: stdout/stderr: Package python-xmpp (xmpppy) must be installed to use Jabber protocol.
+2015-09-24 18:29:13		python: stdout/stderr: Get xmpppy with your package manager, or at this URL: http://xmpppy.sourceforge.net/
+2015-09-24 18:29:13	 !!! 	python: function "register" not found (or failed) in file "/home/rlambert/Dotfiles/weechat/python/autoload/jabber.py"
+2015-09-24 18:29:13		python: stdout/stderr: Traceback (most recent call last):
+2015-09-24 18:29:13		python: stdout/stderr:   File "/home/rlambert/Dotfiles/weechat/python/autoload/highlightxmpp.py", line 41, in <module>
+2015-09-24 18:29:13		python: stdout/stderr:     import xmpp
+2015-09-24 18:29:13		python: stdout/stderr: ImportError: No module named xmpp
+2015-09-24 18:29:13	 !!! 	python: unable to parse file "/home/rlambert/Dotfiles/weechat/python/autoload/highlightxmpp.py"
+2015-09-24 18:29:13		python: stdout/stderr: Missing package(s) for notify: No module named notify2
+2015-09-24 18:29:13		python: stdout/stderr: You must have notify2 installed.
+2015-09-24 18:29:13		python: stdout/stderr: Traceback (most recent call last):
+2015-09-24 18:29:13		python: stdout/stderr:   File "/home/rlambert/Dotfiles/weechat/python/autoload/notify.py", line 74, in <module>
+2015-09-24 18:29:13		python: stdout/stderr:     "low"      : notify2.URGENCY_LOW,
+2015-09-24 18:29:13		python: stdout/stderr: NameError: name 'notify2' is not defined
+2015-09-24 18:29:13	 !!! 	python: unable to parse file "/home/rlambert/Dotfiles/weechat/python/autoload/notify.py"
+2015-09-24 18:29:13		python scripts loaded: allquery, bitlbee_completion, bitlbee_typing_notice, go, grep
+2015-09-24 18:29:14		script: 299 scripts for WeeChat 1.3
+2015-09-24 18:29:14		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2015-09-24 18:29:14		python: scripts unloaded
+2015-10-06 20:17:27		ruby scripts loaded: hilites
+2015-10-06 20:17:27		perl scripts loaded: highmon
+2015-10-06 20:17:27		python: stdout/stderr: Package python-xmpp (xmpppy) must be installed to use Jabber protocol.
+2015-10-06 20:17:27		python: stdout/stderr: Get xmpppy with your package manager, or at this URL: http://xmpppy.sourceforge.net/
+2015-10-06 20:17:27	 !!! 	python: function "register" not found (or failed) in file "/home/rlambert/Dotfiles/weechat/python/autoload/jabber.py"
+2015-10-06 20:17:27		python: stdout/stderr: Traceback (most recent call last):
+2015-10-06 20:17:27		python: stdout/stderr:   File "/home/rlambert/Dotfiles/weechat/python/autoload/highlightxmpp.py", line 41, in <module>
+2015-10-06 20:17:27		python: stdout/stderr:     import xmpp
+2015-10-06 20:17:27		python: stdout/stderr: ImportError: No module named xmpp
+2015-10-06 20:17:27	 !!! 	python: unable to parse file "/home/rlambert/Dotfiles/weechat/python/autoload/highlightxmpp.py"
+2015-10-06 20:17:27		python: stdout/stderr: Missing package(s) for notify: No module named notify2
+2015-10-06 20:17:27		python: stdout/stderr: You must have notify2 installed.
+2015-10-06 20:17:27		python: stdout/stderr: Traceback (most recent call last):
+2015-10-06 20:17:27		python: stdout/stderr:   File "/home/rlambert/Dotfiles/weechat/python/autoload/notify.py", line 74, in <module>
+2015-10-06 20:17:27		python: stdout/stderr:     "low"      : notify2.URGENCY_LOW,
+2015-10-06 20:17:27		python: stdout/stderr: NameError: name 'notify2' is not defined
+2015-10-06 20:17:27	 !!! 	python: unable to parse file "/home/rlambert/Dotfiles/weechat/python/autoload/notify.py"
+2015-10-06 20:17:27		python scripts loaded: allquery, bitlbee_completion, bitlbee_typing_notice, go, grep
+2015-10-06 20:17:27		script: downloading list of scripts...
+2015-10-06 20:17:27		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2015-10-06 20:17:28		script: 299 scripts for WeeChat 1.3
+2015-10-07 08:05:08		python: scripts unloaded
+2015-10-10 11:20:19		ruby scripts loaded: hilites
+2015-10-10 11:20:19		perl scripts loaded: highmon
+2015-10-10 11:20:19		python: stdout/stderr: Package python-xmpp (xmpppy) must be installed to use Jabber protocol.
+2015-10-10 11:20:19		python: stdout/stderr: Get xmpppy with your package manager, or at this URL: http://xmpppy.sourceforge.net/
+2015-10-10 11:20:19	 !!! 	python: function "register" not found (or failed) in file "/home/rlambert/Dotfiles/weechat/python/autoload/jabber.py"
+2015-10-10 11:20:19		python: stdout/stderr: Traceback (most recent call last):
+2015-10-10 11:20:19		python: stdout/stderr:   File "/home/rlambert/Dotfiles/weechat/python/autoload/highlightxmpp.py", line 41, in <module>
+2015-10-10 11:20:19		python: stdout/stderr:     import xmpp
+2015-10-10 11:20:19		python: stdout/stderr: ImportError: No module named xmpp
+2015-10-10 11:20:19	 !!! 	python: unable to parse file "/home/rlambert/Dotfiles/weechat/python/autoload/highlightxmpp.py"
+2015-10-10 11:20:19		python: stdout/stderr: Missing package(s) for notify: No module named notify2
+2015-10-10 11:20:19		python: stdout/stderr: You must have notify2 installed.
+2015-10-10 11:20:19		python: stdout/stderr: Traceback (most recent call last):
+2015-10-10 11:20:19		python: stdout/stderr:   File "/home/rlambert/Dotfiles/weechat/python/autoload/notify.py", line 74, in <module>
+2015-10-10 11:20:19		python: stdout/stderr:     "low"      : notify2.URGENCY_LOW,
+2015-10-10 11:20:19		python: stdout/stderr: NameError: name 'notify2' is not defined
+2015-10-10 11:20:19	 !!! 	python: unable to parse file "/home/rlambert/Dotfiles/weechat/python/autoload/notify.py"
+2015-10-10 11:20:19		python scripts loaded: allquery, bitlbee_completion, bitlbee_typing_notice, go, grep
+2015-10-10 11:20:19		script: downloading list of scripts...
+2015-10-10 11:20:19		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2015-10-10 11:20:20		script: 299 scripts for WeeChat 1.3
+2015-10-10 11:20:22		python: scripts unloaded
+2015-10-13 19:13:30		ruby scripts loaded: hilites
+2015-10-13 19:13:30		perl scripts loaded: highmon
+2015-10-13 19:13:30		python: stdout/stderr: Package python-xmpp (xmpppy) must be installed to use Jabber protocol.
+2015-10-13 19:13:30		python: stdout/stderr: Get xmpppy with your package manager, or at this URL: http://xmpppy.sourceforge.net/
+2015-10-13 19:13:30	 !!! 	python: function "register" not found (or failed) in file "/home/rlambert/Dotfiles/weechat/python/autoload/jabber.py"
+2015-10-13 19:13:30		python: stdout/stderr: Traceback (most recent call last):
+2015-10-13 19:13:30		python: stdout/stderr:   File "/home/rlambert/Dotfiles/weechat/python/autoload/highlightxmpp.py", line 41, in <module>
+2015-10-13 19:13:30		python: stdout/stderr:     import xmpp
+2015-10-13 19:13:30		python: stdout/stderr: ImportError: No module named xmpp
+2015-10-13 19:13:30	 !!! 	python: unable to parse file "/home/rlambert/Dotfiles/weechat/python/autoload/highlightxmpp.py"
+2015-10-13 19:13:30		python: stdout/stderr: Missing package(s) for notify: No module named notify2
+2015-10-13 19:13:30		python: stdout/stderr: You must have notify2 installed.
+2015-10-13 19:13:30		python: stdout/stderr: Traceback (most recent call last):
+2015-10-13 19:13:30		python: stdout/stderr:   File "/home/rlambert/Dotfiles/weechat/python/autoload/notify.py", line 74, in <module>
+2015-10-13 19:13:30		python: stdout/stderr:     "low"      : notify2.URGENCY_LOW,
+2015-10-13 19:13:30		python: stdout/stderr: NameError: name 'notify2' is not defined
+2015-10-13 19:13:30	 !!! 	python: unable to parse file "/home/rlambert/Dotfiles/weechat/python/autoload/notify.py"
+2015-10-13 19:13:30		python scripts loaded: allquery, bitlbee_completion, bitlbee_typing_notice, go, grep
+2015-10-13 19:13:30		script: downloading list of scripts...
+2015-10-13 19:13:30		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, lua, perl, python, relay, ruby, script, tcl, trigger, xfer
+2015-10-13 19:13:32		script: 299 scripts for WeeChat 1.3
+2015-10-13 19:13:35		python: scripts unloaded
