@@ -1,9 +1,10 @@
 mpd_crossfade_time = "5"
 mpd_music_dir = "/home/rlambert/Music/"
-#mpd_host = "/home/rlambert/.config/mpd/socket"
+# mpd_host = "/home/rlambert/.config/mpd/socket"
 mpd_host = "127.0.0.1"
+mpd_port = "6600"
 
-execute_on_song_change = "bash ~/.xmonad/sc ~/.xmonad/scripts/dzen_music2.sh"
+# execute_on_song_change = "bash ~/.xmonad/sc ~/.xmonad/scripts/dzen_music2.sh"
 song_list_format = "{ $8%a $1» $2}{%t} $R$1%b"
 song_status_format = "$8%a $1» $2%t $1» $1%b$8 (%y)$1"
 statusbar_color = "white"

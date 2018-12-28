@@ -1,37 +1,37 @@
-urxvt*termName:                 rxvt
+!urxvt*termName:                 rxvt
 urxvt*loginShell:               true
 urxvt*scrollBar:                false
 urxvt*secondaryScroll:          true
 urxvt*saveLines:                65535
 urxvt*cursorBlink:              true
 
-URxvt.font            : -*-proggytiny-*-*-*-*-10-80-*-*-*-*-*-*
-URxvt.boldFont        : -*-proggytiny-*-*-*-*-10-80-*-*-*-*-*-*
-!urxvt*font:                     xft:FiraMono:pixelsize=12:antialias=true:hinting=true
-!urxvt*boldFont:                 xft:FiraMono:pixelsize=12:antialias=true:hinting=true
+URxvt*font:                     xft:Fira Code:pixelsize=12:antialias=true:hinting=true
+URxvt*boldFont:                 xft:Fira Code:pixelsize=12:antialias=true:hinting=true
 
-URxvt*.transparent: true
+!URxvt.font: xft:Proggy Clean:pixelsize=9:antialias=0
+!URxvt.boldFont: xft:Proggy Clean:pixelsize=9:antialias=0
+
+!URxvt*.transparent: true
 ! URxvt*.shading: 0 to 99 darkens, 101 to 200 lightens
-URxvt*.shading: 40
+!URxvt*.shading: 40
 
 !urxvt*letterSpace:	            -3
-urxvt*matcher.button:           1
-urxvt*perl-ext-common:          default,clipboard,url-select,keyboard-select,selection-to-clipboard
-urxvt*url-select.launcher:      /usr/bin/google-chrome-stable
+!urxvt*matcher.button:           1
+!urxvt*perl-ext-common:          default,clipboard,url-select,keyboard-select,selection-to-clipboard
+urxvt*url-select.launcher:      /usr/bin/firefox
 urxvt*url-select.underline:     true
-urxvt*keysym.C-i:               perl:url-select:select_next
-urxvt*keysym.M-s:               perl:keyboard-select:search
-urxvt*keysym.Shift-Control-c:   perl:clipboard:copy
-urxvt*keysym.Shift-Control-v:   perl:clipboard:paste
-urxvt*iso14755:                 False
+!urxvt*keysym.C-i:               perl:url-select:select_next
+!urxvt*keysym.M-s:               perl:keyboard-select:search
+!urxvt*keysym.Shift-Control-c:   perl:clipboard:copy
+!urxvt*keysym.Shift-Control-v:   perl:clipboard:paste
+!urxvt*iso14755:                 False
 urxvt*clipboard.copycmd:        xsel -ib
 urxvt*clipboard.pastecmd:       xsel -ob
 !urxvt*colorUL:                  #cd546c
 !urxvt*cursorColor:	            #dcdcdc
-urxvt*geometry:		            95x25
-urxvt*urgentOnBell:	            false
+!urxvt*geometry:		            95x25
+!urxvt*urgentOnBell:	            false
 urxvt*visualBell:	            false
-urxvt*cutchars:		            `"()'*<>[]{|}
 
 Xft.autohint: 0
 Xft.lcdfilter:  lcddefault
