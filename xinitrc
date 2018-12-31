@@ -40,7 +40,7 @@ fi
 
 if [ -n "$failsafe" ]; then
  compton -CGb &
- exec i3 -V -d all >> $HOME/i3.log
+ exec i3 -V -d all >> $HOME/.i3.log
 else
  exec $command
 fi
