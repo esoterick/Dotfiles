@@ -17,6 +17,6 @@ fi
 
 # Put your fun stuff here.
 
-eval `keychain --eval --agents ssh id_ed25519`
+eval `keychain --eval --agents ssh,gpg id_ed25519`
 
 export PATH=$HOME/bin:$PATH
